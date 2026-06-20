@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cab Hire - Discover Jharkhand</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Outfit:wght@300;400;600&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .vehicle-card-active {
+            border: 2px solid #012d1d;
+            background-color: #f1f8f4;
+        }
+    </script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#274e3d",
+                        "on-primary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "surface-container-low": "#f3f4f5",
+                        "secondary": "#6e5a4c",
+                        "on-primary-container": "#86af99",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-high": "#e7e8e9",
+                        "primary": "#012d1d",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed-variant": "#5a4300",
+                        "surface-container": "#edeeef",
+                        "tertiary": "#322400",
+                        "surface-variant": "#e1e3e4",
+                        "on-secondary-fixed": "#27190d",
+                        "background": "#f8f9fa",
+                        "primary-fixed": "#c1ecd4",
+                        "inverse-primary": "#a5d0b9",
+                        "primary-fixed-dim": "#a5d0b9",
+                        "secondary-container": "#f6dbc8",
+                        "secondary-fixed-dim": "#dcc2b0",
+                        "surface-container-highest": "#e1e3e4",
+                        "background-off-white": "#FEFEFE",
+                        "error-container": "#ffdad6",
+                        "on-surface": "#191c1d",
+                        "inverse-surface": "#2e3132",
+                        "outline": "#717973",
+                        "inverse-on-surface": "#f0f1f2",
+                        "secondary-fixed": "#f9ddcb",
+                        "surface-bright": "#f8f9fa",
+                        "tertiary-fixed": "#ffdf9a",
+                        "on-error-container": "#93000a",
+                        "water-blue": "#0077B6",
+                        "on-secondary-container": "#735f50",
+                        "on-surface-variant": "#414844",
+                        "on-secondary-fixed-variant": "#554336",
+                        "surface-stone": "#E9ECEF",
+                        "on-primary-fixed": "#002114",
+                        "on-background": "#191c1d",
+                        "tertiary-container": "#4d3900",
+                        "surface-tint": "#3f6653",
+                        "outline-variant": "#c1c8c2",
+                        "surface-dim": "#d9dadb",
+                        "surface": "#f8f9fa",
+                        "on-tertiary-container": "#d19f00",
+                        "tertiary-fixed-dim": "#f8be00",
+                        "on-secondary": "#ffffff",
+                        "primary-container": "#1b4332",
+                        "error": "#ba1a1a",
+                        "text-onyx": "#121417",
+                        "on-tertiary-fixed": "#251a00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "1.25rem",
+                        "gutter": "1.5rem",
+                        "section-padding": "6rem",
+                        "margin-desktop": "5rem",
+                        "stack-unit": "0.5rem"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Outfit"],
+                        "display-lg": ["Montserrat"],
+                        "headline-xl": ["Montserrat"],
+                        "headline-lg": ["Montserrat"],
+                        "display-lg-mobile": ["Montserrat"],
+                        "caption": ["Inter"],
+                        "headline-sm": ["Montserrat"],
+                        "body-md": ["Outfit"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-xl": ["48px", {"lineHeight": "56px", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "display-lg-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background font-body-md text-on-surface overflow-x-hidden">
+
+    <!-- TopNavBar -->
+    <nav class="fixed top-0 w-full z-50 bg-surface/90 dark:bg-primary/90 backdrop-blur-md shadow-sm flex justify-between items-center px-margin-desktop py-4 max-w-full">
+        <div class="flex items-center gap-8">
+            <span class="font-display-lg-mobile text-display-lg-mobile font-bold text-primary dark:text-primary-fixed">Discover Jharkhand</span>
+            <div class="hidden md:flex gap-6">
+                <a href="#" class="text-on-surface-variant dark:text-outline-variant hover:text-primary transition-opacity font-headline-sm text-[16px]">Destinations</a>
+                <a href="#" class="text-on-surface-variant dark:text-outline-variant hover:text-primary transition-opacity font-headline-sm text-[16px]">Forest Retreats</a>
+                <a href="#" class="text-primary dark:text-primary-fixed border-b-2 border-primary pb-1 font-bold font-headline-sm text-[16px]">Cab Hire</a>
+                <a href="#" class="text-on-surface-variant dark:text-outline-variant hover:text-primary transition-opacity font-headline-sm text-[16px]">Culture</a>
+            </div>
+        </div>
+        <button class="bg-primary text-on-primary px-6 py-2 rounded-full font-label-md hover:opacity-80 transition-all duration-300">Plan My Trip</button>
+    </nav>
+
+    <main class="pt-24 pb-20">
+        <!-- Hero Section with Background -->
+        <section class="relative h-[409px] min-h-[300px] flex items-center justify-center overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <div style="background-image: url('placeholder')" data-alt="A cinematic, wide-angle photograph of a pristine, winding road through the dense, vibrant green Saranda forest in Jharkhand during the golden hour. The sunlight filters through the ancient sal trees, creating long, dramatic shadows and a warm, inviting glow. The atmosphere is serene and majestic, with a high-end luxury travel aesthetic, emphasizing the untouched natural beauty of the region." class="w-full h-full bg-cover bg-center"></div>
+                <div class="absolute inset-0 bg-primary/40"></div>
+            </div>
+            <div class="relative z-10 text-center px-margin-mobile">
+                <h1 class="font-display-lg text-white text-display-lg-mobile md:text-display-lg mb-4">Journey into the Wild</h1>
+                <p class="font-body-lg text-white/90 max-w-2xl mx-auto">Reliable cab hire services for your Jharkhand exploration. From city transfers to forest expeditions.</p>
+            </div>
+        </section>
+
+        <!-- Booking Flow Container -->
+        <section class="max-w-6xl mx-auto -mt-16 relative z-20 px-margin-mobile grid grid-cols-1 lg:grid-cols-12 gap-8">
+            
+            <!-- Left: Form -->
+            <div class="lg:col-span-8 space-y-6">
+                <div class="bg-white rounded-xl shadow-xl p-8 border border-surface-variant">
+                    <div class="flex items-center justify-between mb-8">
+                        <h2 class="font-headline-sm text-primary">Book Your Ride</h2>
+                        <!-- Trip Type Toggle -->
+                        <div class="flex bg-surface-container-low p-1 rounded-full border border-outline-variant">
+                            <button onclick="toggleTrip(this)" id="one-way" class="px-6 py-2 rounded-full font-label-md transition-all bg-primary text-on-primary">One-way</button>
+                            <button onclick="toggleTrip(this)" id="round-trip" class="px-6 py-2 rounded-full font-label-md transition-all text-on-surface-variant hover:bg-surface-variant">Round-trip</button>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+                        <!-- Pickup -->
+                        <div class="space-y-2">
+                            <label class="font-label-md text-on-surface-variant">Pickup Location</label>
+                            <div class="relative group">
+                                <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">location_on</span>
+                                <input type="text" placeholder="e.g., Ranchi Airport (IXR)" class="w-full pl-12 pr-4 py-3 rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary transition-all bg-surface-bright">
+                            </div>
+                        </div>
+                        <!-- Drop -->
+                        <div class="space-y-2">
+                            <label class="font-label-md text-on-surface-variant">Drop Location</label>
+                            <div class="relative group">
+                                <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">map</span>
+                                <input type="text" placeholder="e.g., Netarhat Hill Station" class="w-full pl-12 pr-4 py-3 rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary transition-all bg-surface-bright">
+                            </div>
+                        </div>
+                        <!-- Date -->
+                        <div class="space-y-2">
+                            <label class="font-label-md text-on-surface-variant">Pickup Date</label>
+                            <div class="relative">
+                                <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">calendar_today</span>
+                                <input type="date" class="w-full pl-12 pr-4 py-3 rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary transition-all bg-surface-bright">
+                            </div>
+                        </div>
+                        <!-- Time -->
+                        <div class="space-y-2">
+                            <label class="font-label-md text-on-surface-variant">Pickup Time</label>
+                            <div class="relative">
+                                <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">schedule</span>
+                                <input type="time" class="w-full pl-12 pr-4 py-3 rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary transition-all bg-surface-bright">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vehicle Selection -->
+                    <div class="mt-10">
+                        <h3 class="font-label-md text-on-surface-variant mb-4">Select Vehicle Type</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <!-- Sedan -->
+                            <button onclick="selectVehicle(this)" class="vehicle-card group text-left p-4 rounded-xl border-2 border-outline-variant hover:border-primary transition-all flex flex-col gap-3">
+                                <div class="w-full aspect-[16/10] rounded-lg overflow-hidden relative">
+                                    <img src="placeholder" data-alt="A clean, premium white sedan car parked in a minimalist, bright outdoor setting with soft sunlight reflecting off its polished surface. The car looks modern and well-maintained, perfect for a luxury travel service. The background is a slightly blurred, high-end residential or airport drop-off area with stone textures and greenery." class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500">
+                                </div>
+                                <div>
+                                    <p class="font-headline-sm text-[18px] text-primary">Prime Sedan</p>
+                                    <div class="flex items-center gap-2 mt-1">
+                                        <span class="material-symbols-outlined text-[18px] text-outline">person</span>
+                                        <span class="text-caption text-on-surface-variant">4 Passengers</span>
+                                    </div>
+                                </div>
+                            </button>
+                            <!-- SUV -->
+                            <button onclick="selectVehicle(this)" class="vehicle-card group text-left p-4 rounded-xl border-2 border-primary bg-primary-fixed-dim/10 transition-all flex flex-col gap-3">
+                                <div class="w-full aspect-[16/10] rounded-lg overflow-hidden relative">
+                                    <img src="placeholder" data-alt="A rugged yet premium dark green SUV specifically designed for forest terrain, driving through a scenic road with sunlight filtering through trees. The vehicle looks powerful and reliable, featuring a high clearance and modern design. The setting is Jharkhand's lush countryside with a cinematic, high-contrast lighting style." class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500">
+                                    <div class="absolute top-2 right-2 bg-primary text-white text-[10px] px-2 py-0.5 rounded-full font-bold">RECOMMENDED</div>
+                                </div>
+                                <div>
+                                    <p class="font-headline-sm text-[18px] text-primary">Luxury SUV</p>
+                                    <div class="flex items-center gap-2 mt-1">
+                                        <span class="material-symbols-outlined text-[18px] text-outline">person</span>
+                                        <span class="text-caption text-on-surface-variant">6 Passengers</span>
+                                    </div>
+                                </div>
+                            </button>
+                            <!-- Tempo -->
+                            <button onclick="selectVehicle(this)" class="vehicle-card group text-left p-4 rounded-xl border-2 border-outline-variant hover:border-primary transition-all flex flex-col gap-3">
+                                <div class="w-full aspect-[16/10] rounded-lg overflow-hidden relative">
+                                    <img src="placeholder" data-alt="A spacious, high-roof Tempo Traveller van in a sleek silver color, ideal for group travel and sightseeing. The van is parked in a clean, open area with mountain silhouettes in the far background. The lighting is bright and airy, suggesting a fresh morning start for a group expedition." class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500">
+                                </div>
+                                <div>
+                                    <p class="font-headline-sm text-[18px] text-primary">Tempo Traveller</p>
+                                    <div class="flex items-center gap-2 mt-1">
+                                        <span class="material-symbols-outlined text-[18px] text-outline">person</span>
+                                        <span class="text-caption text-on-surface-variant">12 Passengers</span>
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trust Signals -->
+                <div class="flex flex-wrap items-center justify-center gap-8 py-4">
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">verified</span>
+                        <span class="font-label-md text-primary">Verified Drivers</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">payments</span>
+                        <span class="font-label-md text-primary">No Hidden Charges</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">security</span>
+                        <span class="font-label-md text-primary">Govt. Recognized Partner</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Summary & Fare -->
+            <div class="lg:col-span-4">
+                <div class="sticky top-28 space-y-6">
+                    <div class="bg-primary text-on-primary rounded-xl p-6 shadow-xl relative overflow-hidden">
+                        <webgl-shader src="{{DATA:ANIMATION:ANIMATION_2}}" class="absolute inset-0 opacity-20"></webgl-shader>
+                        <div class="relative z-10">
+                            <h3 class="font-headline-sm mb-4">Estimated Fare</h3>
+                            <div class="space-y-3 mb-6">
+                                <div class="flex justify-between text-on-primary/80">
+                                    <span class="font-body-md">Base Fare</span>
+                                    <span class="font-body-md">₹3,450</span>
+                                </div>
+                                <div class="flex justify-between text-on-primary/80">
+                                    <span class="font-body-md">Driver Allowance</span>
+                                    <span class="font-body-md">₹450</span>
+                                </div>
+                                <div class="flex justify-between text-on-primary/80 border-b border-on-primary/20 pb-3">
+                                    <span class="font-body-md">State Toll & Taxes</span>
+                                    <span class="font-body-md text-caption">Inc. in fare</span>
+                                </div>
+                                <div class="flex justify-between pt-2">
+                                    <span class="font-headline-sm">Total</span>
+                                    <span class="font-headline-sm">₹3,900</span>
+                                </div>
+                            </div>
+                            
+                            <button class="w-full bg-tertiary-fixed text-on-tertiary-fixed py-4 rounded-xl font-label-md flex items-center justify-center gap-2 hover:brightness-110 transition-all shadow-lg active:scale-95">
+                                <span class="material-symbols-outlined">chat</span>
+                                Get WhatsApp Confirmation
+                            </button>
+                            <p class="text-[10px] text-on-primary/60 text-center mt-3 uppercase tracking-widest">Instant booking confirmation via WhatsApp</p>
+                        </div>
+                    </div>
+
+                    <!-- Additional Info -->
+                    <div class="bg-white rounded-xl p-6 border border-surface-variant space-y-4">
+                        <h4 class="font-label-md text-primary">Inclusions</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-on-primary-container text-[18px]">check_circle</span>
+                                <span class="text-caption text-on-surface-variant">Fuel Charges included in the fare</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-on-primary-container text-[18px]">check_circle</span>
+                                <span class="text-caption text-on-surface-variant">Experienced local driver fluent in Hindi & Tribal dialects</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-on-primary-container text-[18px]">check_circle</span>
+                                <span class="text-caption text-on-surface-variant">Complimentary bottled water & sanitizer kit</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full rounded-t-xl bg-surface-container-highest dark:bg-primary flex flex-col md:flex-row justify-between items-start px-margin-desktop py-section-padding gap-gutter">
+        <div class="space-y-6 max-w-sm">
+            <span class="font-headline-lg text-headline-lg text-primary dark:text-primary-fixed">Discover Jharkhand</span>
+            <p class="text-on-surface-variant dark:text-surface-variant font-body-md">Promoting sustainable and experiential tourism in the heart of India's forest land. Explore the unexplored with confidence.</p>
+            <p class="text-primary dark:text-primary-fixed font-body-md">© 2024 Discover Jharkhand. Govt. Recognized Tourism Partner.</p>
+        </div>
+        <div class="grid grid-cols-2 gap-x-12 gap-y-4">
+            <a href="#" class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed underline transition-all font-body-md">About Us</a>
+            <a href="#" class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed underline transition-all font-body-md">List Your Property</a>
+            <a href="#" class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed underline transition-all font-body-md">Travel Insurance</a>
+            <a href="#" class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed underline transition-all font-body-md">Privacy Policy</a>
+            <a href="#" class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed underline transition-all font-body-md">Contact Support</a>
+        </div>
+        <div class="space-y-4">
+            <p class="font-label-md text-primary dark:text-primary-fixed uppercase tracking-wider">Follow Our Journey</p>
+            <div class="flex gap-4">
+                <span class="material-symbols-outlined p-2 rounded-full border border-primary/20 text-primary cursor-pointer hover:bg-primary hover:text-white transition-colors">facebook</span>
+                <span class="material-symbols-outlined p-2 rounded-full border border-primary/20 text-primary cursor-pointer hover:bg-primary hover:text-white transition-colors">camera</span>
+                <span class="material-symbols-outlined p-2 rounded-full border border-primary/20 text-primary cursor-pointer hover:bg-primary hover:text-white transition-colors">public</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleTrip(element) {
+            const buttons = element.parentNode.querySelectorAll('button');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-primary', 'text-on-primary');
+                btn.classList.add('text-on-surface-variant', 'hover:bg-surface-variant');
+            });
+            element.classList.add('bg-primary', 'text-on-primary');
+            element.classList.remove('text-on-surface-variant', 'hover:bg-surface-variant');
+        }
+
+        function selectVehicle(element) {
+            const cards = document.querySelectorAll('.vehicle-card');
+            cards.forEach(card => {
+                card.classList.remove('border-primary', 'bg-primary-fixed-dim/10');
+                card.classList.add('border-outline-variant');
+                // Remove recommended badge if any were added dynamically
+            });
+            element.classList.remove('border-outline-variant');
+            element.classList.add('border-primary', 'bg-primary-fixed-dim/10');
+        }
+
+        // Initialize with default date (today)
+        const dateInput = document.querySelector('input[type="date"]');
+        if(dateInput) {
+            const today = new Date().toISOString().split('T')[0];
+            dateInput.value = today;
+        }
+    </script>
+</body>
+</html></style></head><body></body></html>

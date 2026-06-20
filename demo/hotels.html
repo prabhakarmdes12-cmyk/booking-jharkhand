@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Verified Hotels & Stays ï¿½ Booking Jharkhand</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&family=Montserrat:wght@600;700&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,200" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: { primary: "#012d1d", "on-primary": "#ffffff", "primary-container": "#1b4332", "on-primary-container": "#86af99", "primary-fixed": "#c1ecd4", "primary-fixed-dim": "#a5d0b9", "on-primary-fixed": "#002114", "on-primary-fixed-variant": "#274e3d", secondary: "#6e5a4c", "on-secondary": "#ffffff", "secondary-container": "#f6dbc8", "on-secondary-container": "#735f50", secondary_fixed: "#f9ddcb", "secondary-fixed-dim": "#dcc2b0", "on-secondary-fixed": "#27190d", "on-secondary-fixed-variant": "#554336", tertiary: "#322400", "on-tertiary": "#ffffff", "tertiary-container": "#4d3900", "on-tertiary-container": "#d19f00", "tertiary-fixed": "#ffdf9a", "tertiary-fixed-dim": "#f8be00", "on-tertiary-fixed": "#251a00", "on-tertiary-fixed-variant": "#5a4300", error: "#ba1a1a", "on-error": "#ffffff", "error-container": "#ffdad6", "on-error-container": "#93000a", background: "#f8f9fa", "on-background": "#191c1d", surface: "#f8f9fa", "surface-dim": "#d9dadb", "surface-bright": "#f8f9fa", "surface-container-lowest": "#ffffff", "surface-container-low": "#f3f4f5", "surface-container": "#edeeef", "surface-container-high": "#e7e8e9", "surface-container-highest": "#e1e3e4", "on-surface": "#191c1d", "on-surface-variant": "#414844", "inverse-surface": "#2e3132", "inverse-on-surface": "#f0f1f2", "inverse-primary": "#a5d0b9", outline: "#717973", "outline-variant": "#c1c8c2", "surface-tint": "#3f6653", "surface-variant": "#e1e3e4" },
+      borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", "2xl": "1rem", "3xl": "1.5rem", full: "9999px" },
+      spacing: { "margin-mobile": "1.25rem", gutter: "1.5rem", "section-padding": "6rem", "margin-desktop": "5rem", "stack-unit": "0.5rem" },
+      fontFamily: { "display-lg": ["Montserrat"], "headline-xl": ["Montserrat"], "headline-lg": ["Montserrat"], "headline-sm": ["Montserrat"], "body-lg": ["Outfit"], "body-md": ["Outfit"], "label-md": ["Inter"], "caption": ["Inter"] },
+      fontSize: { "display-lg": ["64px", { lineHeight: "72px", letterSpacing: "-0.02em", fontWeight: "700" }], "display-lg-mobile": ["40px", { lineHeight: "48px", letterSpacing: "-0.01em", fontWeight: "700" }], "headline-xl": ["48px", { lineHeight: "56px", fontWeight: "600" }], "headline-lg": ["32px", { lineHeight: "40px", fontWeight: "600" }], "headline-sm": ["24px", { lineHeight: "32px", fontWeight: "600" }], "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }], "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }], "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.05em", fontWeight: "600" }], caption: ["12px", { lineHeight: "16px", fontWeight: "500" }] }
+    }
+  }
+};
+  </script>
+  <script src="i18n.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: Outfit, sans-serif; background: #f8f9fa; color: #191c1d; }
+    .glass { backdrop-filter: blur(16px) saturate(180%); -webkit-backdrop-filter: blur(16px) saturate(180%); background: rgba(255,255,255,0.72); border: 1px solid rgba(255,255,255,0.3); }
+    .glass-dark { backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); background: rgba(1,45,29,0.75); border: 1px solid rgba(255,255,255,0.08); }
+    .card-hover { transition: all 0.4s cubic-bezier(0.25,0.46,0.45,0.94); }
+    .card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 40px -12px rgba(1,45,29,0.25); }
+    .hero-gradient { background: linear-gradient(135deg, rgba(1,45,29,0.85) 0%, rgba(27,67,50,0.6) 50%, rgba(0,0,0,0.3) 100%); }
+    .section-divider { width: 80px; height: 4px; background: linear-gradient(90deg, #1b4332, #a5d0b9); border-radius: 2px; margin: 1rem auto 0; }
+    .nav-link { position: relative; padding-bottom: 2px; }
+    .nav-link::after { content: ""; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: #a5d0b9; transition: width 0.3s ease; }
+    .nav-link:hover::after { width: 100%; }
+    .btn-primary { background: #012d1d; color: #fff; padding: 0.75rem 2rem; border-radius: 0.5rem; font-weight: 600; font-size: 0.875rem; letter-spacing: 0.05em; transition: all 0.3s ease; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem; }
+    .btn-primary:hover { background: #1b4332; box-shadow: 0 8px 24px rgba(1,45,29,0.3); transform: translateY(-1px); }
+    .btn-primary-sm { background: #012d1d; color: #fff; padding: 0.5rem 1.25rem; border-radius: 0.5rem; font-weight: 600; font-size: 0.8rem; transition: all 0.3s ease; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; }
+    .btn-primary-sm:hover { background: #1b4332; box-shadow: 0 4px 16px rgba(1,45,29,0.3); }
+    .btn-whatsapp { background: #25D366; color: #fff; padding: 0.5rem 1.25rem; border-radius: 0.5rem; font-weight: 600; font-size: 0.8rem; transition: all 0.3s ease; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; }
+    .btn-whatsapp:hover { background: #20bd5a; }
+    .filter-chip { padding: 0.4rem 1rem; border-radius: 9999px; font-size: 0.8rem; font-family: Inter; font-weight: 600; cursor: pointer; transition: all 0.3s ease; border: 2px solid #c1c8c2; background: transparent; color: #414844; }
+    .filter-chip:hover { border-color: #1b4332; color: #012d1d; }
+    .filter-chip.active { background: #012d1d; border-color: #012d1d; color: #fff; }
+    .badge-verified { background: linear-gradient(135deg, #012d1d, #1b4332); color: #a5d0b9; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.03em; display: inline-flex; align-items: center; gap: 0.25rem; }
+    .animate-fade-in { animation: fadeInUp 0.8s ease forwards; }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+  </style>
+</head>
+<body>
+
+<nav class="fixed top-0 left-0 right-0 z-50 glass">
+  <div class="w-full px-5">
+    <div class="flex items-center justify-between h-16 lg:h-20">
+      <a href="index.html" class="flex items-center gap-2 shrink-0"><img src="logo.png" alt="Booking Jharkhand" class="h-12 w-auto lg:h-14" /></a>
+      <div class="hidden lg:flex items-center gap-8">
+        <a href="index.html" class="nav-link text-sm font-Inter font-semibold text-[#191c1d] tracking-wider uppercase" data-i18n="nav_home">Home</a>
+        <a href="destinations.html" class="nav-link text-sm font-Inter font-semibold text-[#191c1d] tracking-wider uppercase" data-i18n="nav_destinations">Destinations</a>
+        <a href="hotels.html" class="nav-link text-sm font-Inter font-semibold text-[#191c1d] tracking-wider uppercase" data-i18n="nav_hotels">Hotels</a>
+        <a href="cab-booking.html" class="nav-link text-sm font-Inter font-semibold text-[#191c1d] tracking-wider uppercase" data-i18n="nav_cabs">Cabs</a>
+        <a href="restaurants.html" class="nav-link text-sm font-Inter font-semibold text-[#191c1d] tracking-wider uppercase" data-i18n="nav_restaurants">Restaurants</a>
+        <a href="packages.html" class="nav-link text-sm font-Inter font-semibold text-[#191c1d] tracking-wider uppercase" data-i18n="nav_packages">Packages</a>
+        <a href="blog.html" class="nav-link text-sm font-Inter font-semibold text-[#191c1d] tracking-wider uppercase" data-i18n="nav_travel_guides">Travel Guides</a>
+        <a href="vendor-onboarding.html" class="nav-link text-sm font-Inter font-semibold text-[#191c1d] tracking-wider uppercase" data-i18n="nav_list_property">List Your Property</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <button id="langToggle" onclick="toggleLang()" class="text-sm font-Inter font-semibold text-[#012d1d] bg-[#c1ecd4] hover:bg-[#a5d0b9] px-3 py-1.5 rounded-full" data-i18n="lang_toggle">हिन्दी</button>
+        <a href="ai-planner.html" class="hidden sm:inline-flex btn-primary text-xs !px-4 !py-2.5 lg:!px-6 lg:!py-3"><span data-i18n="nav_plan_trip">Plan My Trip</span><span class="material-symbols-outlined text-base leading-none">explore</span></a>
+        <button class="lg:hidden p-2 text-[#012d1d]" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')"><span class="material-symbols-outlined text-2xl">menu</span></button>
+      </div>
+    </div>
+  </div>
+  <div id="mobileMenu" class="hidden lg:hidden border-t border-[#c1c8c2]/40 bg-white/95 backdrop-blur-md">
+    <div class="px-4 py-4 space-y-3">
+      <a href="index.html" class="block text-sm font-Inter font-semibold text-[#191c1d] tracking-wider uppercase" data-i18n="nav_home">Home</a>
+      <a href="destinations.html" class="block text-sm font-Inter font-semibold text-[#191c1d] tracking-wider uppercase" data-i18n="nav_destinations">Destinations</a>
+      <a href="hotels.html" class="block text-sm font-Inter font-semibold text-[#191c1d] tracking-wider uppercase" data-i18n="nav_hotels">Hotels</a>
+      <a href="cab-booking.html" class="block text-sm font-Inter font-semibold text-[#191c1d] tracking-wider uppercase" data-i18n="nav_cabs">Cabs</a>
+      <a href="restaurants.html" class="block text-sm font-Inter font-semibold text-[#191c1d] tracking-wider uppercase" data-i18n="nav_restaurants">Restaurants</a>
+      <a href="packages.html" class="block text-sm font-Inter font-semibold text-[#191c1d] tracking-wider uppercase" data-i18n="nav_packages">Packages</a>
+      <a href="blog.html" class="block text-sm font-Inter font-semibold text-[#191c1d] tracking-wider uppercase" data-i18n="nav_travel_guides">Travel Guides</a>
+      <a href="vendor-onboarding.html" class="block text-sm font-Inter font-semibold text-[#191c1d] tracking-wider uppercase" data-i18n="nav_list_property">List Your Property</a>
+      <a href="ai-planner.html" class="block text-sm font-Inter font-semibold text-[#012d1d] bg-[#c1ecd4] px-4 py-2 rounded-lg text-center mt-2" data-i18n="nav_plan_trip">Plan My Trip</a>
+    </div>
+  </div>
+</nav>
+
+<section class="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+  <div class="absolute inset-0 bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1920&q=80')"></div>
+  <div class="absolute inset-0 hero-gradient"></div>
+  <div class="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 text-center pt-28 pb-16">
+    <div class="animate-fade-in">
+      <span class="material-symbols-outlined text-5xl text-[#a5d0b9] mb-4 block">hotel</span>
+      <h1 class="font-Montserrat text-headline-sm sm:text-headline-xl text-white leading-tight mb-3" data-i18n="hotels_hero_title">Verified Hotels & Stays</h1>
+      <p class="text-base sm:text-lg text-white/80 max-w-2xl mx-auto font-Outfit" data-i18n="hotels_hero_sub">Handpicked accommodations across Jharkhand</p>
+    </div>
+  </div>
+  <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#f8f9fa] to-transparent pointer-events-none"></div>
+</section>
+
+<section class="py-8 bg-white sticky top-20 z-30 border-b border-[#e1e3e4]">
+  <div class="w-full px-5">
+    <div class="flex flex-wrap gap-3 items-center">
+      <select class="text-sm font-Inter font-semibold border-2 border-[#c1c8c2] rounded-full px-4 py-2 text-[#414844] bg-white outline-none focus:border-[#1b4332]">
+        <option data-i18n="filter_city">City</option>
+        <option>Ranchi</option><option>Netarhat</option><option>Betla</option><option>Patratu</option><option>Deoghar</option><option>Hazaribagh</option><option>Jamshedpur</option>
+      </select>
+      <select class="text-sm font-Inter font-semibold border-2 border-[#c1c8c2] rounded-full px-4 py-2 text-[#414844] bg-white outline-none focus:border-[#1b4332]">
+        <option data-i18n="filter_price_range">Price Range</option>
+        <option>?500 - ?1,500</option><option>?1,500 - ?3,000</option><option>?3,000 - ?5,000</option><option>?5,000+</option>
+      </select>
+      <div class="flex gap-2 flex-wrap">
+        <span class="filter-chip active" data-i18n="filter_all">All</span>
+        <span class="filter-chip" data-i18n="prop_hotel">Hotel</span>
+        <span class="filter-chip" data-i18n="prop_resort">Resort</span>
+        <span class="filter-chip" data-i18n="prop_homestay">Homestay</span>
+      </div>
+      <div class="flex gap-2 flex-wrap">
+        <span class="filter-chip" data-i18n="amenity_wifi">Wi-Fi</span>
+        <span class="filter-chip" data-i18n="amenity_ac">AC</span>
+        <span class="filter-chip" data-i18n="amenity_parking">Parking</span>
+        <span class="filter-chip" data-i18n="amenity_restaurant">Restaurant</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-section-padding">
+  <div class="w-full px-5">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="group card-hover bg-white rounded-2xl overflow-hidden border border-[#e1e3e4] shadow-sm hover:shadow-xl">
+        <div class="relative h-52 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1511497584788-876760111969?w=800&q=80" alt="Netarhat Forest Retreat" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+          <div class="absolute top-3 left-3"><span class="badge-verified"><span class="material-symbols-outlined text-xs">verified</span><span data-i18n="verified_badge">Verified Jharkhand Partner</span></span></div>
+          <div class="absolute top-3 right-3"><span class="bg-white/95 backdrop-blur-sm px-2.5 py-1 rounded-lg text-xs font-Inter font-semibold flex items-center gap-1"><span class="material-symbols-outlined text-[#f8be00] text-sm">star</span>4.8</span></div>
+        </div>
+        <div class="p-5">
+          <h3 class="font-Montserrat font-semibold text-lg text-[#012d1d]" data-i18n="hotel_1_name">Netarhat Forest Retreat</h3>
+          <p class="text-sm text-[#717973] mt-0.5 mb-2" data-i18n="hotel_1_loc">Netarhat, Jharkhand</p>
+          <div class="flex flex-wrap gap-1.5 mb-3">
+            <span class="text-xs bg-[#f3f4f5] text-[#414844] px-2.5 py-1 rounded-full font-Inter font-medium flex items-center gap-1"><span class="material-symbols-outlined text-xs">wifi</span><span data-i18n="amenity_wifi">Wi-Fi</span></span>
+            <span class="text-xs bg-[#f3f4f5] text-[#414844] px-2.5 py-1 rounded-full font-Inter font-medium flex items-center gap-1"><span class="material-symbols-outlined text-xs">ac_unit</span><span data-i18n="amenity_ac">AC</span></span>
+            <span class="text-xs bg-[#f3f4f5] text-[#414844] px-2.5 py-1 rounded-full font-Inter font-medium flex items-center gap-1"><span class="material-symbols-outlined text-xs">local_parking</span><span data-i18n="amenity_parking">Parking</span></span>
+          </div>
+          <div class="flex items-center justify-between pt-3 border-t border-[#e1e3e4]">
+            <span class="text-lg font-Inter font-bold text-[#012d1d]"><span data-i18n="from">from</span> ?3,999 <span class="font-normal text-xs text-[#717973]" data-i18n="per_night">/night</span></span>
+          </div>
+          <div class="flex gap-2 mt-3">
+            <a href="hotel-netarhat.html" class="btn-primary-sm text-xs flex-1 justify-center" data-i18n="view_details">View Details</a>
+            <a href="https://wa.me/910000000000" class="btn-whatsapp text-xs flex-1 justify-center" data-i18n="whatsapp_enquiry">WhatsApp Enquiry</a>
+          </div>
+        </div>
+      </div>
+      <div class="group card-hover bg-white rounded-2xl overflow-hidden border border-[#e1e3e4] shadow-sm hover:shadow-xl">
+        <div class="relative h-52 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80" alt="Saranda Eco Resort" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+          <div class="absolute top-3 left-3"><span class="badge-verified"><span class="material-symbols-outlined text-xs">verified</span><span data-i18n="verified_badge">Verified Jharkhand Partner</span></span></div>
+          <div class="absolute top-3 right-3"><span class="bg-white/95 backdrop-blur-sm px-2.5 py-1 rounded-lg text-xs font-Inter font-semibold flex items-center gap-1"><span class="material-symbols-outlined text-[#f8be00] text-sm">star</span>4.6</span></div>
+        </div>
+        <div class="p-5">
+          <h3 class="font-Montserrat font-semibold text-lg text-[#012d1d]" data-i18n="hotel_2_name">Saranda Eco Resort</h3>
+          <p class="text-sm text-[#717973] mt-0.5 mb-2" data-i18n="hotel_2_loc">Saranda, Jharkhand</p>
+          <div class="flex flex-wrap gap-1.5 mb-3">
+            <span class="text-xs bg-[#f3f4f5] text-[#414844] px-2.5 py-1 rounded-full font-Inter font-medium flex items-center gap-1"><span class="material-symbols-outlined text-xs">wifi</span><span data-i18n="amenity_wifi">Wi-Fi</span></span>
+            <span class="text-xs bg-[#f3f4f5] text-[#414844] px-2.5 py-1 rounded-full font-Inter font-medium flex items-center gap-1"><span class="material-symbols-outlined text-xs">restaurant</span><span data-i18n="amenity_restaurant">Restaurant</span></span>
+            <span class="text-xs bg-[#f3f4f5] text-[#414844] px-2.5 py-1 rounded-full font-Inter font-medium flex items-center gap-1"><span class="material-symbols-outlined text-xs">local_parking</span><span data-i18n="amenity_parking">Parking</span></span>
+          </div>
+          <div class="flex items-center justify-between pt-3 border-t border-[#e1e3e4]">
+            <span class="text-lg font-Inter font-bold text-[#012d1d]"><span data-i18n="from">from</span> ?2,999 <span class="font-normal text-xs text-[#717973]" data-i18n="per_night">/night</span></span>
+          </div>
+          <div class="flex gap-2 mt-3">
+            <a href="hotel-netarhat.html" class="btn-primary-sm text-xs flex-1 justify-center" data-i18n="view_details">View Details</a>
+            <a href="https://wa.me/910000000000" class="btn-whatsapp text-xs flex-1 justify-center" data-i18n="whatsapp_enquiry">WhatsApp Enquiry</a>
+          </div>
+        </div>
+      </div>
+      <div class="group card-hover bg-white rounded-2xl overflow-hidden border border-[#e1e3e4] shadow-sm hover:shadow-xl">
+        <div class="relative h-52 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1511497584788-876760111969?w=800&q=80" alt="Betla Jungle Lodge" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+          <div class="absolute top-3 left-3"><span class="badge-verified"><span class="material-symbols-outlined text-xs">verified</span><span data-i18n="verified_badge">Verified Jharkhand Partner</span></span></div>
+          <div class="absolute top-3 right-3"><span class="bg-white/95 backdrop-blur-sm px-2.5 py-1 rounded-lg text-xs font-Inter font-semibold flex items-center gap-1"><span class="material-symbols-outlined text-[#f8be00] text-sm">star</span>4.7</span></div>
+        </div>
+        <div class="p-5">
+          <h3 class="font-Montserrat font-semibold text-lg text-[#012d1d]" data-i18n="hotel_3_name">Betla Jungle Lodge</h3>
+          <p class="text-sm text-[#717973] mt-0.5 mb-2" data-i18n="hotel_3_loc">Betla, Jharkhand</p>
+          <div class="flex flex-wrap gap-1.5 mb-3">
+            <span class="text-xs bg-[#f3f4f5] text-[#414844] px-2.5 py-1 rounded-full font-Inter font-medium flex items-center gap-1"><span class="material-symbols-outlined text-xs">restaurant</span><span data-i18n="amenity_restaurant">Restaurant</span></span>
+            <span class="text-xs bg-[#f3f4f5] text-[#414844] px-2.5 py-1 rounded-full font-Inter font-medium flex items-center gap-1"><span class="material-symbols-outlined text-xs">ac_unit</span><span data-i18n="amenity_ac">AC</span></span>
+            <span class="text-xs bg-[#f3f4f5] text-[#414844] px-2.5 py-1 rounded-full font-Inter font-medium flex items-center gap-1"><span class="material-symbols-outlined text-xs">local_parking</span><span data-i18n="amenity_parking">Parking</span></span>
+          </div>
+          <div class="flex items-center justify-between pt-3 border-t border-[#e1e3e4]">
+            <span class="text-lg font-Inter font-bold text-[#012d1d]"><span data-i18n="from">from</span> ?4,499 <span class="font-normal text-xs text-[#717973]" data-i18n="per_night">/night</span></span>
+          </div>
+          <div class="flex gap-2 mt-3">
+            <a href="hotel-netarhat.html" class="btn-primary-sm text-xs flex-1 justify-center" data-i18n="view_details">View Details</a>
+            <a href="https://wa.me/910000000000" class="btn-whatsapp text-xs flex-1 justify-center" data-i18n="whatsapp_enquiry">WhatsApp Enquiry</a>
+          </div>
+        </div>
+      </div>
+      <div class="group card-hover bg-white rounded-2xl overflow-hidden border border-[#e1e3e4] shadow-sm hover:shadow-xl">
+        <div class="relative h-52 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80" alt="Patratu Lake Resort" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+          <div class="absolute top-3 left-3"><span class="badge-verified"><span class="material-symbols-outlined text-xs">verified</span><span data-i18n="verified_badge">Verified Jharkhand Partner</span></span></div>
+          <div class="absolute top-3 right-3"><span class="bg-white/95 backdrop-blur-sm px-2.5 py-1 rounded-lg text-xs font-Inter font-semibold flex items-center gap-1"><span class="material-symbols-outlined text-[#f8be00] text-sm">star</span>4.5</span></div>
+        </div>
+        <div class="p-5">
+          <h3 class="font-Montserrat font-semibold text-lg text-[#012d1d]" data-i18n="hotel_4_name">Patratu Lake Resort</h3>
+          <p class="text-sm text-[#717973] mt-0.5 mb-2" data-i18n="hotel_4_loc">Patratu, Jharkhand</p>
+          <div class="flex flex-wrap gap-1.5 mb-3">
+            <span class="text-xs bg-[#f3f4f5] text-[#414844] px-2.5 py-1 rounded-full font-Inter font-medium flex items-center gap-1"><span class="material-symbols-outlined text-xs">wifi</span><span data-i18n="amenity_wifi">Wi-Fi</span></span>
+            <span class="text-xs bg-[#f3f4f5] text-[#414844] px-2.5 py-1 rounded-full font-Inter font-medium flex items-center gap-1"><span class="material-symbols-outlined text-xs">restaurant</span><span data-i18n="amenity_restaurant">Restaurant</span></span>
+            <span class="text-xs bg-[#f3f4f5] text-[#414844] px-2.5 py-1 rounded-full font-Inter font-medium flex items-center gap-1"><span class="material-symbols-outlined text-xs">directions_boat</span>Boating</span>
+          </div>
+          <div class="flex items-center justify-between pt-3 border-t border-[#e1e3e4]">
+            <span class="text-lg font-Inter font-bold text-[#012d1d]"><span data-i18n="from">from</span> ?2,499 <span class="font-normal text-xs text-[#717973]" data-i18n="per_night">/night</span></span>
+          </div>
+          <div class="flex gap-2 mt-3">
+            <a href="hotel-netarhat.html" class="btn-primary-sm text-xs flex-1 justify-center" data-i18n="view_details">View Details</a>
+            <a href="https://wa.me/910000000000" class="btn-whatsapp text-xs flex-1 justify-center" data-i18n="whatsapp_enquiry">WhatsApp Enquiry</a>
+          </div>
+        </div>
+      </div>
+      <div class="group card-hover bg-white rounded-2xl overflow-hidden border border-[#e1e3e4] shadow-sm hover:shadow-xl">
+        <div class="relative h-52 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=800&q=80" alt="Ranchi Greens" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+          <div class="absolute top-3 left-3"><span class="badge-verified"><span class="material-symbols-outlined text-xs">verified</span><span data-i18n="verified_badge">Verified Jharkhand Partner</span></span></div>
+          <div class="absolute top-3 right-3"><span class="bg-white/95 backdrop-blur-sm px-2.5 py-1 rounded-lg text-xs font-Inter font-semibold flex items-center gap-1"><span class="material-symbols-outlined text-[#f8be00] text-sm">star</span>4.4</span></div>
+        </div>
+        <div class="p-5">
+          <h3 class="font-Montserrat font-semibold text-lg text-[#012d1d]" data-i18n="hotel_5_name">Ranchi Greens</h3>
+          <p class="text-sm text-[#717973] mt-0.5 mb-2" data-i18n="hotel_5_loc">Ranchi, Jharkhand</p>
+          <div class="flex flex-wrap gap-1.5 mb-3">
+            <span class="text-xs bg-[#f3f4f5] text-[#414844] px-2.5 py-1 rounded-full font-Inter font-medium flex items-center gap-1"><span class="material-symbols-outlined text-xs">wifi</span><span data-i18n="amenity_wifi">Wi-Fi</span></span>
+            <span class="text-xs bg-[#f3f4f5] text-[#414844] px-2.5 py-1 rounded-full font-Inter font-medium flex items-center gap-1"><span class="material-symbols-outlined text-xs">ac_unit</span><span data-i18n="amenity_ac">AC</span></span>
+            <span class="text-xs bg-[#f3f4f5] text-[#414844] px-2.5 py-1 rounded-full font-Inter font-medium flex items-center gap-1"><span class="material-symbols-outlined text-xs">local_parking</span><span data-i18n="amenity_parking">Parking</span></span>
+          </div>
+          <div class="flex items-center justify-between pt-3 border-t border-[#e1e3e4]">
+            <span class="text-lg font-Inter font-bold text-[#012d1d]"><span data-i18n="from">from</span> ?1,999 <span class="font-normal text-xs text-[#717973]" data-i18n="per_night">/night</span></span>
+          </div>
+          <div class="flex gap-2 mt-3">
+            <a href="hotel-netarhat.html" class="btn-primary-sm text-xs flex-1 justify-center" data-i18n="view_details">View Details</a>
+            <a href="https://wa.me/910000000000" class="btn-whatsapp text-xs flex-1 justify-center" data-i18n="whatsapp_enquiry">WhatsApp Enquiry</a>
+          </div>
+        </div>
+      </div>
+      <div class="group card-hover bg-white rounded-2xl overflow-hidden border border-[#e1e3e4] shadow-sm hover:shadow-xl">
+        <div class="relative h-52 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1624222247344-550fb60583dc?w=800&q=80" alt="Deoghar Temple Inn" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+          <div class="absolute top-3 left-3"><span class="badge-verified"><span class="material-symbols-outlined text-xs">verified</span><span data-i18n="verified_badge">Verified Jharkhand Partner</span></span></div>
+          <div class="absolute top-3 right-3"><span class="bg-white/95 backdrop-blur-sm px-2.5 py-1 rounded-lg text-xs font-Inter font-semibold flex items-center gap-1"><span class="material-symbols-outlined text-[#f8be00] text-sm">star</span>4.3</span></div>
+        </div>
+        <div class="p-5">
+          <h3 class="font-Montserrat font-semibold text-lg text-[#012d1d]" data-i18n="hotel_6_name">Deoghar Temple Inn</h3>
+          <p class="text-sm text-[#717973] mt-0.5 mb-2" data-i18n="hotel_6_loc">Deoghar, Jharkhand</p>
+          <div class="flex flex-wrap gap-1.5 mb-3">
+            <span class="text-xs bg-[#f3f4f5] text-[#414844] px-2.5 py-1 rounded-full font-Inter font-medium flex items-center gap-1"><span class="material-symbols-outlined text-xs">wifi</span><span data-i18n="amenity_wifi">Wi-Fi</span></span>
+            <span class="text-xs bg-[#f3f4f5] text-[#414844] px-2.5 py-1 rounded-full font-Inter font-medium flex items-center gap-1"><span class="material-symbols-outlined text-xs">ac_unit</span><span data-i18n="amenity_ac">AC</span></span>
+            <span class="text-xs bg-[#f3f4f5] text-[#414844] px-2.5 py-1 rounded-full font-Inter font-medium flex items-center gap-1"><span class="material-symbols-outlined text-xs">restaurant</span><span data-i18n="amenity_restaurant">Restaurant</span></span>
+          </div>
+          <div class="flex items-center justify-between pt-3 border-t border-[#e1e3e4]">
+            <span class="text-lg font-Inter font-bold text-[#012d1d]"><span data-i18n="from">from</span> ?1,499 <span class="font-normal text-xs text-[#717973]" data-i18n="per_night">/night</span></span>
+          </div>
+          <div class="flex gap-2 mt-3">
+            <a href="hotel-netarhat.html" class="btn-primary-sm text-xs flex-1 justify-center" data-i18n="view_details">View Details</a>
+            <a href="https://wa.me/910000000000" class="btn-whatsapp text-xs flex-1 justify-center" data-i18n="whatsapp_enquiry">WhatsApp Enquiry</a>
+          </div>
+        </div>
+      </div>
+      <div class="group card-hover bg-white rounded-2xl overflow-hidden border border-[#e1e3e4] shadow-sm hover:shadow-xl">
+        <div class="relative h-52 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80" alt="Hazaribagh Wildlife Resort" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+          <div class="absolute top-3 left-3"><span class="badge-verified"><span class="material-symbols-outlined text-xs">verified</span><span data-i18n="verified_badge">Verified Jharkhand Partner</span></span></div>
+          <div class="absolute top-3 right-3"><span class="bg-white/95 backdrop-blur-sm px-2.5 py-1 rounded-lg text-xs font-Inter font-semibold flex items-center gap-1"><span class="material-symbols-outlined text-[#f8be00] text-sm">star</span>4.6</span></div>
+        </div>
+        <div class="p-5">
+          <h3 class="font-Montserrat font-semibold text-lg text-[#012d1d]" data-i18n="hotel_7_name">Hazaribagh Wildlife Resort</h3>
+          <p class="text-sm text-[#717973] mt-0.5 mb-2" data-i18n="hotel_7_loc">Hazaribagh, Jharkhand</p>
+          <div class="flex flex-wrap gap-1.5 mb-3">
+            <span class="text-xs bg-[#f3f4f5] text-[#414844] px-2.5 py-1 rounded-full font-Inter font-medium flex items-center gap-1"><span class="material-symbols-outlined text-xs">wifi</span><span data-i18n="amenity_wifi">Wi-Fi</span></span>
+            <span class="text-xs bg-[#f3f4f5] text-[#414844] px-2.5 py-1 rounded-full font-Inter font-medium flex items-center gap-1"><span class="material-symbols-outlined text-xs">ac_unit</span><span data-i18n="amenity_ac">AC</span></span>
+            <span class="text-xs bg-[#f3f4f5] text-[#414844] px-2.5 py-1 rounded-full font-Inter font-medium flex items-center gap-1"><span class="material-symbols-outlined text-xs">restaurant</span><span data-i18n="amenity_restaurant">Restaurant</span></span>
+          </div>
+          <div class="flex items-center justify-between pt-3 border-t border-[#e1e3e4]">
+            <span class="text-lg font-Inter font-bold text-[#012d1d]"><span data-i18n="from">from</span> ?3,499 <span class="font-normal text-xs text-[#717973]" data-i18n="per_night">/night</span></span>
+          </div>
+          <div class="flex gap-2 mt-3">
+            <a href="hotel-netarhat.html" class="btn-primary-sm text-xs flex-1 justify-center" data-i18n="view_details">View Details</a>
+            <a href="https://wa.me/910000000000" class="btn-whatsapp text-xs flex-1 justify-center" data-i18n="whatsapp_enquiry">WhatsApp Enquiry</a>
+          </div>
+        </div>
+      </div>
+      <div class="group card-hover bg-white rounded-2xl overflow-hidden border border-[#e1e3e4] shadow-sm hover:shadow-xl">
+        <div class="relative h-52 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80" alt="Jamshedpur Executive Stay" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+          <div class="absolute top-3 left-3"><span class="badge-verified"><span class="material-symbols-outlined text-xs">verified</span><span data-i18n="verified_badge">Verified Jharkhand Partner</span></span></div>
+          <div class="absolute top-3 right-3"><span class="bg-white/95 backdrop-blur-sm px-2.5 py-1 rounded-lg text-xs font-Inter font-semibold flex items-center gap-1"><span class="material-symbols-outlined text-[#f8be00] text-sm">star</span>4.2</span></div>
+        </div>
+        <div class="p-5">
+          <h3 class="font-Montserrat font-semibold text-lg text-[#012d1d]" data-i18n="hotel_8_name">Jamshedpur Executive Stay</h3>
+          <p class="text-sm text-[#717973] mt-0.5 mb-2" data-i18n="hotel_8_loc">Jamshedpur, Jharkhand</p>
+          <div class="flex flex-wrap gap-1.5 mb-3">
+            <span class="text-xs bg-[#f3f4f5] text-[#414844] px-2.5 py-1 rounded-full font-Inter font-medium flex items-center gap-1"><span class="material-symbols-outlined text-xs">wifi</span><span data-i18n="amenity_wifi">Wi-Fi</span></span>
+            <span class="text-xs bg-[#f3f4f5] text-[#414844] px-2.5 py-1 rounded-full font-Inter font-medium flex items-center gap-1"><span class="material-symbols-outlined text-xs">ac_unit</span><span data-i18n="amenity_ac">AC</span></span>
+            <span class="text-xs bg-[#f3f4f5] text-[#414844] px-2.5 py-1 rounded-full font-Inter font-medium flex items-center gap-1"><span class="material-symbols-outlined text-xs">local_parking</span><span data-i18n="amenity_parking">Parking</span></span>
+          </div>
+          <div class="flex items-center justify-between pt-3 border-t border-[#e1e3e4]">
+            <span class="text-lg font-Inter font-bold text-[#012d1d]"><span data-i18n="from">from</span> ?2,799 <span class="font-normal text-xs text-[#717973]" data-i18n="per_night">/night</span></span>
+          </div>
+          <div class="flex gap-2 mt-3">
+            <a href="hotel-netarhat.html" class="btn-primary-sm text-xs flex-1 justify-center" data-i18n="view_details">View Details</a>
+            <a href="https://wa.me/910000000000" class="btn-whatsapp text-xs flex-1 justify-center" data-i18n="whatsapp_enquiry">WhatsApp Enquiry</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-[#012d1d] text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">
+      <div class="lg:col-span-2">
+        <img src="logo.png" alt="Booking Jharkhand" class="h-10 w-auto mb-4 brightness-0 invert" />
+        <p class="text-sm text-[#86af99] leading-relaxed max-w-sm" data-i18n="footer_tagline">Promoting sustainable and experiential tourism in the heart of India forest land.</p>
+        <div class="flex items-center gap-3 mt-6">
+          <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#a5d0b9] hover:text-[#012d1d] transition-all"><svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+          <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#a5d0b9] hover:text-[#012d1d] transition-all"><svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg></a>
+          <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#a5d0b9] hover:text-[#012d1d] transition-all"><svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.302 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
+          <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#a5d0b9] hover:text-[#012d1d] transition-all"><svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M23.998 12c0-6.628-5.372-12-11.999-12C5.372 0 0 5.372 0 12c0 5.99 4.388 10.954 10.124 11.854v-8.385H7.078v-3.47h3.046V9.356c0-3.007 1.792-4.669 4.532-4.669 1.313 0 2.686.234 2.686.234v2.953H15.83c-1.49 0-1.955.925-1.955 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 22.954 24 17.99 24 12z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4 class="font-Inter font-semibold text-sm tracking-widest uppercase text-[#a5d0b9] mb-4" data-i18n="footer_platform">Platform</h4>
+        <ul class="space-y-3">
+          <li><a href="about.html" class="text-sm text-[#86af99] hover:text-white transition-colors" data-i18n="footer_about">About Us</a></li>
+          <li><a href="contact.html" class="text-sm text-[#86af99] hover:text-white transition-colors" data-i18n="footer_contact">Contact</a></li>
+          <li><a href="faq.html" class="text-sm text-[#86af99] hover:text-white transition-colors">FAQ</a></li>
+          <li><a href="blog.html" class="text-sm text-[#86af99] hover:text-white transition-colors">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-Inter font-semibold text-sm tracking-widest uppercase text-[#a5d0b9] mb-4" data-i18n="footer_support">Support</h4>
+        <ul class="space-y-3">
+          <li><a href="privacy.html" class="text-sm text-[#86af99] hover:text-white transition-colors" data-i18n="footer_privacy">Privacy Policy</a></li>
+          <li><a href="terms.html" class="text-sm text-[#86af99] hover:text-white transition-colors" data-i18n="footer_terms">Terms of Service</a></li>
+          <li><a href="cancellation.html" class="text-sm text-[#86af99] hover:text-white transition-colors" data-i18n="footer_cancellation">Cancellation Policy</a></li>
+          <li><a href="vendor-onboarding.html" class="text-sm text-[#86af99] hover:text-white transition-colors" data-i18n="footer_partner">Partner With Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-Inter font-semibold text-sm tracking-widest uppercase text-[#a5d0b9] mb-4" data-i18n="footer_connect">Connect</h4>
+        <ul class="space-y-3">
+          <li><a href="contact.html" class="text-sm text-[#86af99] hover:text-white transition-colors">info@discoverjharkhand.com</a></li>
+          <li><a href="tel:+918000000000" class="text-sm text-[#86af99] hover:text-white transition-colors">+91 80000 00000</a></li>
+          <li><a href="https://wa.me/910000000000" class="text-sm text-[#86af99] hover:text-white transition-colors">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-[#86af99]" data-i18n="footer_rights">&copy; 2025 Booking Jharkhand. Govt. Recognized Tourism Partner.</p>
+      <p class="text-xs text-[#86af99]/60">Built with <span class="text-red-400">&#9829;</span> by <a href="https://www.chiti.tech/en" target="_blank" class="underline hover:text-white transition-colors">Chiti Technologies</a></p>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/910000000000" target="_blank" rel="noopener" class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300" aria-label="WhatsApp">
+  <svg class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.588-5.946 0-6.56 5.338-11.898 11.901-11.898 3.181 0 6.173 1.24 8.421 3.488 2.249 2.248 3.489 5.241 3.489 8.419 0 6.561-5.337 11.899-11.901 11.899-2.017 0-3.991-.511-5.733-1.482l-6.276 1.683zm5.091-3.731c1.601.951 3.444 1.454 5.32 1.455 5.741 0 10.413-4.672 10.413-10.413 0-2.781-1.082-5.393-3.048-7.36s-4.577-3.048-7.365-3.048c-5.738 0-10.41 4.672-10.41 10.413 0 1.945.541 3.83 1.567 5.461l-1.026 3.748 3.849-1.031zm2.635-5.989c-.567-.041-1.256.189-1.938.567-.484.286-1.638 1.6-1.638 3.905s1.679 4.324 1.934 4.623c.255.299 3.226 5.156 7.96 7.018 1.104.434 1.966.694 2.64.886 1.114.318 2.129.273 2.931.173.895-.112 2.758-1.128 3.147-2.217.389-1.089.389-2.021.272-2.217-.117-.196-.432-.317-.897-.553-.466-.236-2.758-1.363-3.186-1.518-.427-.155-.739-.233-1.051.234-.312.467-1.207 1.518-1.479 1.829-.272.311-.545.35-1.011.116-.466-.233-1.967-.725-3.746-2.313-1.385-1.235-2.319-2.759-2.591-3.224-.272-.466-.029-.718.204-.95.209-.209.466-.545.699-.817.233-.272.311-.467.466-.778.156-.311.078-.583-.039-.817-.117-.234-1.051-2.531-1.438-3.466-.379-.923-.772-.794-1.058-.809-.272-.015-.583-.015-.895-.015z"/></svg>
+</a>
+
+<script>
+document.addEventListener('DOMContentLoaded', applyLang);
+</script>
+</body>
+</html>

@@ -1,0 +1,1691 @@
+# PRD: Jharkhand Tourism Marketplace Platform
+
+## Product Name
+
+Working names:
+
+1. Discover Jharkhand
+2. Travel Jharkhand
+3. Explore Jharkhand
+4. Booking Jharkhand 2.0
+5. Jharkhand Travel OS
+
+Recommended positioning:
+
+**Jharkhand Tourism Marketplace Platform**
+
+Tagline:
+
+**Stay. Travel. Explore Jharkhand.**
+
+---
+
+# 1. Product Vision
+
+Build a modern tourism marketplace for Jharkhand where travelers can discover destinations, book hotels, reserve cabs, explore restaurants, plan itineraries, and connect with verified local tourism vendors.
+
+The platform should not feel like a hotel directory.
+
+It should feel like the digital gateway to Jharkhand.
+
+---
+
+# 2. Core Problem
+
+Jharkhand has strong tourism assets:
+
+* Waterfalls
+* Forests
+* Tribal culture
+* Pilgrimage
+* Wildlife
+* Mining heritage
+* Hill stations
+* Rural tourism
+* Weekend travel
+* Adventure tourism
+
+But the digital experience is fragmented.
+
+A tourist currently has to search separately for:
+
+* Where to go
+* Where to stay
+* How to reach
+* Which cab to book
+* What food is available
+* What is safe
+* What is verified
+* Who to contact
+* What is the correct price
+* Whether online booking is trustworthy
+
+This creates friction and lost bookings.
+
+---
+
+# 3. Product Opportunity
+
+The platform can become a regional OTA for Jharkhand.
+
+Not a national OTA.
+
+Not a generic hotel booking site.
+
+A focused state-level travel commerce platform.
+
+Core value:
+
+> One trusted platform for discovering and booking Jharkhand travel experiences.
+
+---
+
+# 4. Target Users
+
+## 4.1 Tourist / Traveler
+
+Types:
+
+* Families from Jharkhand, Bihar, Bengal, Odisha
+* Pilgrims visiting Deoghar, Parasnath, Rajrappa
+* Weekend travelers from Ranchi, Jamshedpur, Dhanbad, Bokaro
+* Students and young groups
+* Corporate visitors
+* Wedding and event guests
+* Wildlife and nature travelers
+* Photography and trekking groups
+
+Needs:
+
+* Simple destination discovery
+* Trustworthy hotels
+* Cab availability
+* Clear pricing
+* WhatsApp assistance
+* Reviews
+* Safety information
+* Easy booking
+* Local itinerary suggestions
+
+---
+
+## 4.2 Hotel / Resort Owner
+
+Needs:
+
+* Online visibility
+* Booking leads
+* Room inventory management
+* Pricing management
+* Photos and amenities display
+* WhatsApp enquiries
+* Booking calendar
+* Payment tracking
+* Reviews
+* Seasonal promotions
+
+---
+
+## 4.3 Cab Operator
+
+Needs:
+
+* Trip leads
+* Route-based packages
+* Airport pickup bookings
+* Driver assignment
+* Vehicle availability
+* Payment tracking
+* Customer ratings
+
+---
+
+## 4.4 Restaurant / Food Business
+
+Needs:
+
+* Discovery listing
+* Table reservation
+* Menu display
+* Party booking
+* Event listing
+* Food tourism visibility
+* Reviews
+
+---
+
+## 4.5 Platform Admin
+
+Needs:
+
+* Manage users
+* Manage vendors
+* Approve listings
+* Manage bookings
+* Track commission
+* Handle complaints
+* Publish destinations
+* Manage SEO pages
+* Track revenue
+* Verify properties
+* Manage homepage content
+
+---
+
+# 5. Product Positioning
+
+Current weak positioning:
+
+“Hotels / Restaurant / Cab”
+
+New positioning:
+
+**Jharkhand’s travel discovery and booking marketplace.**
+
+Secondary line:
+
+**Hotels, resorts, cabs, food, tours, pilgrimage, waterfalls, forests and local experiences — all in one platform.**
+
+---
+
+# 6. MVP Strategy
+
+Do not build full MakeMyTrip in version one.
+
+Build a powerful MVP that looks premium, works smoothly, and proves business value.
+
+## MVP Goal
+
+Launch a working travel marketplace with:
+
+* Destination discovery
+* Hotel listings
+* Cab enquiry
+* Restaurant listings
+* WhatsApp-assisted booking
+* Vendor onboarding
+* Admin panel
+* SEO-ready pages
+
+---
+
+# 7. MVP Modules
+
+## 7.1 Public Website
+
+Pages:
+
+1. Homepage
+2. Destinations listing
+3. Destination detail page
+4. Hotels listing
+5. Hotel detail page
+6. Cab booking page
+7. Restaurants listing
+8. Restaurant detail page
+9. Experiences / packages page
+10. Blog / travel guide
+11. List your property
+12. About
+13. Contact
+14. Help / FAQ
+15. Terms
+16. Privacy
+17. Cancellation policy
+
+---
+
+## 7.2 Homepage Requirements
+
+Homepage should sell the dream first, booking second.
+
+Sections:
+
+1. Cinematic hero
+2. Search box
+3. Popular destinations
+4. Weekend escapes
+5. Waterfall trails
+6. Pilgrimage circuits
+7. Forest and wildlife stays
+8. Featured hotels
+9. Cab packages
+10. Food and restaurants
+11. Why book with us
+12. Verified partners
+13. Traveler reviews
+14. List your property CTA
+15. Travel guide articles
+16. WhatsApp support CTA
+
+Hero copy:
+
+**Discover the Soul of Jharkhand**
+
+Subcopy:
+
+Book verified hotels, local cabs, restaurants and curated travel experiences across waterfalls, forests, pilgrimage destinations and heritage towns.
+
+Primary CTA:
+
+**Explore Destinations**
+
+Secondary CTA:
+
+**Book Hotel / Cab**
+
+---
+
+# 8. Destination System
+
+Destinations are the backbone of the platform.
+
+Each destination page should combine content + commerce.
+
+## Example Destination Pages
+
+* Ranchi
+* Netarhat
+* Betla
+* Deoghar
+* Parasnath
+* Patratu
+* Hazaribagh
+* Jamshedpur
+* Dhanbad
+* Bokaro
+* Giridih
+* Rajrappa
+* Latehar
+* Palamu
+* Dumka
+
+## Destination Page Structure
+
+Each destination page should have:
+
+1. Hero image/video
+2. Short emotional introduction
+3. Best time to visit
+4. Top attractions
+5. Hotels nearby
+6. Cab options
+7. Food recommendations
+8. Things to do
+9. Suggested itineraries
+10. Distance from major cities
+11. Travel safety notes
+12. FAQs
+13. Related blogs
+14. Booking CTA
+
+Example:
+
+# Netarhat
+
+Sections:
+
+* Sunrise point
+* Sunset point
+* Forest drives
+* Nearby waterfalls
+* Best hotels
+* Cab from Ranchi
+* 2-day itinerary
+* Family travel tips
+* Best time to visit
+
+---
+
+# 9. Hotel Module
+
+## Hotel Listing Page
+
+Filters:
+
+* City
+* Destination
+* Price range
+* Rating
+* Property type
+* Amenities
+* Family friendly
+* Couple friendly
+* Parking
+* Restaurant
+* AC
+* Wi-Fi
+* Banquet
+* Resort
+* Homestay
+* Near temple
+* Near waterfall
+* Near airport
+* Verified
+
+Cards should show:
+
+* Image
+* Name
+* Location
+* Starting price
+* Rating
+* Amenities
+* Verified badge
+* CTA: View details
+* CTA: WhatsApp enquiry
+
+---
+
+## Hotel Detail Page
+
+Sections:
+
+1. Image gallery
+2. Hotel name
+3. Location
+4. Verified badge
+5. Rating
+6. Price range
+7. Availability enquiry
+8. Amenities
+9. Room types
+10. About property
+11. Nearby attractions
+12. Map
+13. Policies
+14. Check-in / check-out
+15. Cancellation policy
+16. Reviews
+17. Similar hotels
+18. WhatsApp booking
+19. Call button
+
+MVP booking method:
+
+* Enquiry form
+* WhatsApp button
+* Admin receives lead
+* Vendor receives lead
+* Booking confirmed manually
+
+Advanced version:
+
+* Live inventory
+* Online payment
+* Auto confirmation
+* Commission deduction
+
+---
+
+# 10. Cab Module
+
+Cab should not be generic.
+
+It should be route/package based.
+
+## Cab Categories
+
+1. Airport pickup
+2. Railway station pickup
+3. Local sightseeing
+4. Waterfall circuit
+5. Temple tour
+6. Intercity cab
+7. Corporate travel
+8. Wedding transport
+9. SUV rental
+10. Tempo traveller
+11. Bus rental
+12. Bike rental
+
+## Cab Booking Flow
+
+User selects:
+
+1. Pickup location
+2. Drop location
+3. Date
+4. Time
+5. Vehicle type
+6. Number of passengers
+7. One-way / round-trip
+8. Contact details
+9. Special request
+
+Output:
+
+* Estimated fare
+* WhatsApp confirmation
+* Admin lead
+* Cab vendor assignment
+
+MVP:
+
+Manual quote system.
+
+Advanced:
+
+Distance-based fare calculator.
+
+---
+
+# 11. Restaurant Module
+
+Restaurant listing should support travel and local discovery.
+
+## Restaurant Categories
+
+* Family restaurant
+* Dhaba
+* Tribal food
+* Vegetarian
+* Non-veg
+* Cafe
+* Fine dining
+* Near temple
+* Near highway
+* Near waterfall
+* Party hall
+* Banquet
+* Bar
+* Local cuisine
+
+## Restaurant Detail Page
+
+Sections:
+
+1. Photos
+2. Name
+3. Location
+4. Cuisine
+5. Menu
+6. Timings
+7. Average cost
+8. Facilities
+9. Party booking
+10. Reviews
+11. Map
+12. Call / WhatsApp
+13. Reserve table
+
+MVP:
+
+Lead-based reservation.
+
+Advanced:
+
+Table booking and food pre-order.
+
+---
+
+# 12. Package / Experience Module
+
+This is where the platform becomes powerful.
+
+## Experience Categories
+
+1. Waterfall trails
+2. Pilgrimage tours
+3. Wildlife tours
+4. Forest stays
+5. Tribal culture tours
+6. Adventure trips
+7. Weekend escapes
+8. Family holidays
+9. Student group trips
+10. Corporate retreats
+11. Wedding guest travel
+12. Mining tourism
+13. Heritage walks
+
+## Example Packages
+
+### Ranchi Waterfall Circuit
+
+Includes:
+
+* Hundru Falls
+* Jonha Falls
+* Dassam Falls
+* Local cab
+* Lunch stop
+* Guide optional
+
+### Deoghar Pilgrimage Package
+
+Includes:
+
+* Hotel
+* Temple transfer
+* Local cab
+* Food recommendations
+* Nearby attractions
+
+### Netarhat Weekend Escape
+
+Includes:
+
+* Stay
+* Sunrise point
+* Sunset point
+* Forest drive
+* Cab from Ranchi
+
+---
+
+# 13. AI Travel Planner
+
+This should be a flagship Chiti feature.
+
+User prompt example:
+
+“I am coming with family from Ranchi. Budget ₹20,000. Need 3 days. Want waterfalls and peaceful stay.”
+
+AI output:
+
+* Suggested destination
+* Day-wise itinerary
+* Hotel options
+* Cab estimate
+* Food stops
+* Total budget
+* Booking CTA
+
+MVP AI:
+
+Use structured form + rule-based recommendation.
+
+Advanced AI:
+
+LLM-based itinerary generator connected to real inventory.
+
+---
+
+# 14. Vendor Onboarding
+
+## List Your Property Flow
+
+Vendor selects:
+
+* Hotel
+* Resort
+* Homestay
+* Restaurant
+* Cab
+* Tour guide
+* Event venue
+
+Form fields:
+
+* Business name
+* Owner name
+* Phone
+* WhatsApp
+* Email
+* Location
+* Category
+* Photos
+* GST number
+* License details
+* Bank details
+* Description
+* Amenities
+* Pricing
+* Cancellation rules
+
+Admin must approve before listing becomes public.
+
+---
+
+# 15. Admin Panel
+
+Admin panel is critical.
+
+## Admin Dashboard
+
+Metrics:
+
+* Total bookings
+* Total leads
+* Revenue
+* Pending enquiries
+* Active vendors
+* Pending vendors
+* Top destinations
+* Top hotels
+* Cab enquiries
+* Restaurant enquiries
+* Complaints
+* Conversion rate
+
+## Admin Features
+
+1. Manage destinations
+2. Manage hotels
+3. Manage rooms
+4. Manage restaurants
+5. Manage cabs
+6. Manage packages
+7. Manage blogs
+8. Manage users
+9. Manage vendors
+10. Manage bookings
+11. Manage enquiries
+12. Manage reviews
+13. Manage commissions
+14. Manage homepage
+15. Manage SEO metadata
+16. Manage media library
+17. Manage coupons
+18. Manage support tickets
+
+---
+
+# 16. Vendor Dashboard
+
+## Hotel Vendor Dashboard
+
+Features:
+
+* Profile completion
+* Room management
+* Pricing
+* Photos
+* Amenities
+* Booking enquiries
+* Confirm / reject booking
+* Reviews
+* Payouts
+* Promotions
+
+## Cab Vendor Dashboard
+
+Features:
+
+* Vehicles
+* Drivers
+* Routes
+* Pricing
+* Availability
+* Trip enquiries
+* Assign driver
+* Payment status
+
+## Restaurant Vendor Dashboard
+
+Features:
+
+* Menu
+* Photos
+* Timings
+* Table enquiries
+* Party bookings
+* Reviews
+* Offers
+
+---
+
+# 17. User Account
+
+MVP user account is optional.
+
+For faster launch, allow guest enquiries.
+
+Advanced user dashboard:
+
+* My bookings
+* Saved hotels
+* Saved destinations
+* Past trips
+* Reviews
+* Wallet / credits
+* Membership
+* Support tickets
+
+---
+
+# 18. Trust System
+
+Trust is a major conversion factor.
+
+Add:
+
+* Verified property badge
+* Verified cab badge
+* GST available badge
+* Safe for family badge
+* Women-friendly tag
+* Cancellation policy
+* Real photos
+* Admin approved listings
+* Customer reviews
+* Booking support number
+* WhatsApp support
+* Complaint form
+* Emergency contact info
+* Secure payment badges
+
+---
+
+# 19. SEO Strategy
+
+This project should be SEO-first.
+
+## SEO Page Types
+
+1. Destination pages
+2. Hotel city pages
+3. Hotel near-place pages
+4. Cab route pages
+5. Restaurant city pages
+6. Travel guide blogs
+7. Package pages
+8. Festival pages
+9. Weekend itinerary pages
+
+## Example SEO Pages
+
+* Hotels in Ranchi
+* Hotels in Deoghar
+* Hotels in Netarhat
+* Hotels near Baidyanath Temple
+* Resorts in Betla
+* Cab from Ranchi Airport
+* Ranchi to Netarhat cab
+* Ranchi waterfall tour
+* Best waterfalls in Jharkhand
+* Weekend trips from Ranchi
+* Family resorts in Jharkhand
+* Deoghar temple travel guide
+* Betla National Park stay
+* Parasnath travel guide
+* Patratu resort booking
+
+---
+
+# 20. Content Strategy
+
+Content should be built like a tourism magazine.
+
+## Blog Categories
+
+* Destination guides
+* Travel tips
+* Food guides
+* Pilgrimage guides
+* Waterfall guides
+* Forest and wildlife
+* Weekend plans
+* Festival travel
+* Safety guides
+* Cab route guides
+* Hotel recommendations
+
+## Example Blog Titles
+
+* 10 Best Waterfalls Near Ranchi
+* Complete Guide to Netarhat Weekend Trip
+* Best Time to Visit Betla National Park
+* Deoghar Travel Guide for First-Time Pilgrims
+* Ranchi to Patratu Road Trip Guide
+* Best Family Resorts in Jharkhand
+* How to Plan a 3-Day Jharkhand Trip
+* Best Places to Visit in Jharkhand During Monsoon
+
+---
+
+# 21. Booking Flow
+
+## MVP Booking Flow
+
+1. User discovers destination
+2. User selects hotel/cab/package
+3. User fills enquiry form
+4. Admin receives lead
+5. Vendor receives lead
+6. Admin confirms availability
+7. User pays advance manually or through payment link
+8. Booking confirmed
+9. Confirmation sent via WhatsApp/email
+
+## Advanced Booking Flow
+
+1. User selects dates
+2. System checks inventory
+3. User selects room
+4. User pays online
+5. Commission calculated
+6. Vendor notified
+7. User gets auto confirmation
+8. Booking appears in dashboard
+
+---
+
+# 22. Payment System
+
+MVP:
+
+* Razorpay payment link
+* Manual confirmation
+* Admin-managed booking status
+
+Advanced:
+
+* Razorpay checkout
+* Auto invoice
+* Split settlement
+* Vendor payout
+* Cancellation refund workflow
+* Commission reports
+
+---
+
+# 23. Commission Model
+
+Possible revenue streams:
+
+1. Hotel booking commission: 10%–20%
+2. Cab booking commission: 10%–15%
+3. Restaurant reservation commission
+4. Sponsored listings
+5. Featured hotel placement
+6. Vendor subscription
+7. Travel packages margin
+8. Membership plans
+9. Corporate travel accounts
+10. Event and wedding travel packages
+
+---
+
+# 24. Membership System
+
+Optional future module.
+
+## Traveler Membership
+
+Benefits:
+
+* Discounts
+* Priority support
+* Wallet points
+* Early package access
+* Free itinerary planning
+
+## Vendor Membership
+
+Plans:
+
+### Basic
+
+* Listing only
+
+### Pro
+
+* Featured placement
+* Leads
+* Analytics
+* Offer management
+
+### Premium
+
+* Homepage feature
+* SEO page
+* Photoshoot support
+* Campaign support
+* Dedicated account manager
+
+---
+
+# 25. Mobile Experience
+
+Mobile-first is mandatory.
+
+Most users will come from:
+
+* WhatsApp
+* Instagram
+* Google search
+* Maps
+* Local referrals
+
+Mobile priorities:
+
+* Fast loading
+* Sticky search
+* Sticky WhatsApp
+* Simple filters
+* Short forms
+* Click-to-call
+* Map integration
+* Large photos
+* Hindi + English support
+
+---
+
+# 26. Language Support
+
+Phase 1:
+
+* English
+* Hindi
+
+Phase 2:
+
+* Bengali
+* Odia
+* Local language snippets where useful
+
+Content should be simple, emotional, and trustworthy.
+
+---
+
+# 27. Design Direction
+
+Visual tone:
+
+* Forest green
+* Earth brown
+* Warm yellow
+* Stone grey
+* Water blue
+* Premium off-white
+
+Design feeling:
+
+* Nature-rich
+* Trustworthy
+* Modern
+* Local
+* Not overly corporate
+* Not cheap travel agency
+* Not government-looking
+
+Reference feel:
+
+* Airbnb for discovery
+* Booking.com for filters
+* MakeMyTrip for booking confidence
+* State tourism site for cultural legitimacy
+* Chiti style for premium storytelling
+
+---
+
+# 28. Suggested Sitemap
+
+## Main Navigation
+
+* Explore
+* Hotels
+* Cabs
+* Restaurants
+* Packages
+* Travel Guides
+* List Your Property
+
+## Footer
+
+* About
+* Contact
+* Help
+* Cancellation Policy
+* Privacy Policy
+* Terms
+* Vendor Login
+* Partner With Us
+* Careers
+* Jharkhand Destinations
+
+---
+
+# 29. Database Entities
+
+Core tables:
+
+## users
+
+* id
+* name
+* phone
+* email
+* role
+* password_hash
+* created_at
+
+## destinations
+
+* id
+* name
+* slug
+* district
+* description
+* hero_image
+* best_time
+* latitude
+* longitude
+* seo_title
+* seo_description
+
+## properties
+
+* id
+* vendor_id
+* destination_id
+* name
+* slug
+* type
+* address
+* city
+* description
+* price_starting
+* rating
+* verified
+* status
+* latitude
+* longitude
+
+## rooms
+
+* id
+* property_id
+* name
+* capacity
+* price
+* amenities
+* images
+* status
+
+## restaurants
+
+* id
+* vendor_id
+* name
+* slug
+* cuisine
+* city
+* address
+* average_cost
+* opening_hours
+* verified
+* status
+
+## cabs
+
+* id
+* vendor_id
+* vehicle_type
+* vehicle_name
+* seats
+* ac
+* price_per_km
+* status
+
+## packages
+
+* id
+* name
+* slug
+* destination_id
+* duration
+* price_starting
+* inclusions
+* exclusions
+* itinerary
+* status
+
+## bookings
+
+* id
+* user_id
+* type
+* item_id
+* check_in
+* check_out
+* pickup
+* drop_location
+* total_amount
+* status
+* payment_status
+
+## enquiries
+
+* id
+* name
+* phone
+* email
+* type
+* destination
+* message
+* status
+* assigned_vendor_id
+
+## reviews
+
+* id
+* user_id
+* item_type
+* item_id
+* rating
+* comment
+* status
+
+## vendors
+
+* id
+* business_name
+* owner_name
+* phone
+* email
+* type
+* gst
+* verification_status
+* payout_details
+
+## media
+
+* id
+* url
+* type
+* alt_text
+* uploaded_by
+
+## blogs
+
+* id
+* title
+* slug
+* content
+* category
+* author
+* seo_title
+* seo_description
+* published_at
+
+---
+
+# 30. Recommended Tech Stack
+
+## Frontend
+
+* Next.js
+* TypeScript
+* Tailwind CSS
+* Framer Motion
+* Shadcn UI
+* React Hook Form
+* Zod
+
+## Backend
+
+Option 1:
+
+* Next.js API routes
+* Prisma
+* PostgreSQL
+
+Option 2:
+
+* Separate Node.js/NestJS backend
+* PostgreSQL
+* Redis
+
+For your current speed, use Option 1 first.
+
+## Database
+
+* PostgreSQL
+
+## ORM
+
+* Prisma
+
+## Authentication
+
+* NextAuth or custom auth
+* Phone OTP later
+
+## Payments
+
+* Razorpay
+
+## Storage
+
+* Cloudinary for MVP
+* Cloudflare R2 later
+
+## Search
+
+MVP:
+
+* Database search
+
+Advanced:
+
+* Meilisearch
+
+## Maps
+
+* Google Maps
+* Mapbox if advanced
+
+## Deployment
+
+* Vercel for frontend
+* Supabase/Neon for database
+* Cloudinary for media
+
+---
+
+# 31. MVP Build Roadmap
+
+## Week 1: Foundation
+
+* Brand direction
+* Sitemap
+* Database schema
+* Auth
+* Admin layout
+* Homepage
+* Destination model
+* Hotel model
+
+## Week 2: Public Marketplace
+
+* Destination pages
+* Hotel listing
+* Hotel detail
+* Cab enquiry
+* Restaurant listing
+* Contact forms
+* WhatsApp integration
+
+## Week 3: Admin System
+
+* Admin login
+* Create/edit destinations
+* Create/edit hotels
+* Create/edit restaurants
+* Create/edit cab vendors
+* Manage enquiries
+* Lead status pipeline
+
+## Week 4: SEO + Polish
+
+* Blog system
+* SEO metadata
+* Mobile optimization
+* Performance
+* Analytics
+* Basic vendor onboarding
+* Demo content
+* Pitch deck screenshots
+
+---
+
+# 32. Phase 1 MVP Scope
+
+Build this first:
+
+1. Homepage
+2. Destination pages
+3. Hotel listing
+4. Hotel detail
+5. Cab enquiry
+6. Restaurant listing
+7. Package listing
+8. Blog
+9. Admin panel
+10. Vendor onboarding form
+11. WhatsApp lead system
+12. SEO structure
+
+Do not build online payment in the first sprint unless necessary.
+
+---
+
+# 33. Phase 2 Scope
+
+Add:
+
+1. User accounts
+2. Vendor dashboard
+3. Booking calendar
+4. Payment integration
+5. Coupon system
+6. Reviews
+7. Advanced filters
+8. Cab fare calculator
+9. Email/SMS/WhatsApp notifications
+10. Commission tracking
+
+---
+
+# 34. Phase 3 Scope
+
+Add:
+
+1. AI travel planner
+2. Mobile app
+3. Live inventory
+4. Dynamic pricing
+5. Multi-vendor payouts
+6. Guide booking
+7. Event booking
+8. Membership
+9. Loyalty wallet
+10. Corporate travel module
+
+---
+
+# 35. First Demo Dataset
+
+Create demo content for:
+
+## Destinations
+
+* Ranchi
+* Netarhat
+* Betla
+* Deoghar
+* Patratu
+* Parasnath
+
+## Hotels
+
+* 3 hotels per destination
+
+## Cabs
+
+* Ranchi Airport pickup
+* Ranchi to Netarhat
+* Ranchi waterfall circuit
+* Deoghar temple cab
+* Betla safari cab
+
+## Restaurants
+
+* 3 restaurants in Ranchi
+* 2 in Deoghar
+* 2 in Netarhat
+* 2 highway dhabas
+
+## Packages
+
+* Ranchi Waterfall Circuit
+* Netarhat Weekend Escape
+* Deoghar Pilgrimage Plan
+* Betla Wildlife Stay
+* Patratu Day Trip
+
+---
+
+# 36. Homepage Wireframe
+
+## Section 1: Hero
+
+Headline:
+
+Discover the Soul of Jharkhand
+
+Subheadline:
+
+Book verified hotels, local cabs, restaurants and curated travel experiences across waterfalls, forests, temples and hill destinations.
+
+Search:
+
+Where do you want to go?
+
+Fields:
+
+* Destination
+* Check-in
+* Check-out
+* Guests
+* Search button
+
+---
+
+## Section 2: Experience Categories
+
+Cards:
+
+* Waterfalls
+* Pilgrimage
+* Forest Stays
+* Weekend Trips
+* Cab Packages
+* Restaurants
+
+---
+
+## Section 3: Popular Destinations
+
+Cards:
+
+* Ranchi
+* Netarhat
+* Deoghar
+* Betla
+* Patratu
+* Parasnath
+
+---
+
+## Section 4: Featured Stays
+
+Hotel cards with verified badge.
+
+---
+
+## Section 5: Cab Packages
+
+* Ranchi Airport Pickup
+* Waterfall Circuit
+* Deoghar Darshan
+* Netarhat Weekend Cab
+
+---
+
+## Section 6: Travel Planner CTA
+
+Not sure where to go?
+
+Let our Jharkhand Travel Planner build your itinerary.
+
+---
+
+## Section 7: List Your Property
+
+For hotels, resorts, restaurants, cabs and travel operators.
+
+---
+
+# 37. Hotel Detail Wireframe
+
+1. Gallery
+2. Hotel title
+3. Verified badge
+4. Location
+5. Price
+6. Booking form
+7. Amenities
+8. Room options
+9. About
+10. Nearby attractions
+11. Policies
+12. Reviews
+13. Similar hotels
+14. Sticky WhatsApp button
+
+---
+
+# 38. Cab Booking Wireframe
+
+1. Select route
+2. Select vehicle
+3. Select date/time
+4. Enter passenger details
+5. Get quote
+6. WhatsApp confirmation
+
+---
+
+# 39. Admin Lead Pipeline
+
+Lead stages:
+
+1. New
+2. Contacted
+3. Vendor assigned
+4. Availability checked
+5. Payment pending
+6. Confirmed
+7. Completed
+8. Cancelled
+9. Lost
+
+This turns the platform into a CRM, not just a website.
+
+---
+
+# 40. Success Metrics
+
+## Business Metrics
+
+* Leads per day
+* Booking conversion rate
+* Vendor signups
+* Hotel bookings
+* Cab bookings
+* Revenue
+* Commission earned
+* Repeat users
+
+## Product Metrics
+
+* Search usage
+* Destination page views
+* Hotel detail views
+* Enquiry submissions
+* WhatsApp clicks
+* Mobile conversion
+* SEO traffic
+
+## Trust Metrics
+
+* Verified vendors
+* Reviews collected
+* Complaint resolution time
+* Booking confirmation time
+
+---
+
+# 41. Pricing Proposal Logic
+
+If selling to an owner:
+
+## Basic Redesign
+
+₹1.5L – ₹3L
+
+Includes:
+
+* Website
+* Destination pages
+* Hotel listings
+* Cab enquiry
+* Restaurant listing
+* Admin panel basic
+
+## Marketplace MVP
+
+₹4L – ₹8L
+
+Includes:
+
+* Full marketplace
+* Admin dashboard
+* Vendor onboarding
+* Lead CRM
+* SEO structure
+* Blog CMS
+* WhatsApp integration
+
+## OTA Platform
+
+₹10L – ₹25L+
+
+Includes:
+
+* Vendor dashboard
+* Inventory
+* Payments
+* Booking engine
+* Commission system
+* Reviews
+* Notifications
+
+## Tourism Ecosystem
+
+₹25L – ₹1Cr+
+
+Includes:
+
+* AI planner
+* Mobile app
+* Multi-vendor payouts
+* Live inventory
+* Analytics
+* CRM
+* Marketing engine
+
+---
+
+# 42. What Chiti Should Build First
+
+Build a speculative MVP/case study first.
+
+Not full product.
+
+Your first goal:
+
+Create a stunning 5-page demo:
+
+1. Homepage
+2. Destination page: Netarhat
+3. Hotel detail page
+4. Cab booking flow
+5. Admin dashboard
+
+This will be enough to pitch:
+
+* Booking Jharkhand
+* Hotel groups
+* Jharkhand resorts
+* Tourism vendors
+* Travel agencies
+* Government/tourism consultants
+
+---
+
+# 43. Final Product Statement
+
+This platform is not a redesign.
+
+It is a digital operating system for Jharkhand tourism.
+
+It brings together:
+
+* Discovery
+* Booking
+* Local vendors
+* Tourism storytelling
+* CRM
+* Payments
+* SEO
+* AI trip planning
+* Vendor growth
+
+The first version should prove the vision.
+
+The later versions can become a serious travel-tech company.

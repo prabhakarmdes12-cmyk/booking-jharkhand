@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Discover Jharkhand | Partner Portal</title>
+<!-- Google Fonts: Montserrat (Headlines), Outfit (Body), Inter (Labels/UI) -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Outfit:wght@300;400;500;600&family=Inter:wght@400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:wght@100..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container": "#edeeef",
+                    "error": "#ba1a1a",
+                    "on-surface": "#191c1d",
+                    "water-blue": "#0077B6",
+                    "on-primary-fixed": "#002114",
+                    "on-surface-variant": "#414844",
+                    "secondary-fixed": "#f9ddcb",
+                    "outline-variant": "#c1c8c2",
+                    "primary": "#012d1d",
+                    "surface-tint": "#3f6653",
+                    "on-primary-fixed-variant": "#274e3d",
+                    "on-error-container": "#93000a",
+                    "on-tertiary": "#ffffff",
+                    "surface": "#f8f9fa",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed": "#c1ecd4",
+                    "on-error": "#ffffff",
+                    "on-tertiary-container": "#d19f00",
+                    "secondary-fixed-dim": "#dcc2b0",
+                    "text-onyx": "#121417",
+                    "on-primary": "#ffffff",
+                    "surface-container-low": "#f3f4f5",
+                    "on-secondary-container": "#735f50",
+                    "error-container": "#ffdad6",
+                    "inverse-primary": "#a5d0b9",
+                    "background": "#f8f9fa",
+                    "secondary-container": "#f6dbc8",
+                    "surface-bright": "#f8f9fa",
+                    "secondary": "#6e5a4c",
+                    "tertiary-container": "#4d3900",
+                    "inverse-on-surface": "#f0f1f2",
+                    "on-tertiary-fixed": "#251a00",
+                    "surface-dim": "#d9dadb",
+                    "on-secondary-fixed": "#27190d",
+                    "surface-container-high": "#e7e8e9",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed-variant": "#554336",
+                    "background-off-white": "#FEFEFE",
+                    "outline": "#717973",
+                    "primary-container": "#1b4332",
+                    "tertiary-fixed": "#ffdf9a",
+                    "tertiary-fixed-dim": "#f8be00",
+                    "surface-variant": "#e1e3e4",
+                    "surface-container-highest": "#e1e3e4",
+                    "inverse-surface": "#2e3132",
+                    "tertiary": "#322400",
+                    "primary-fixed-dim": "#a5d0b9",
+                    "on-tertiary-fixed-variant": "#5a4300",
+                    "on-primary-container": "#86af99",
+                    "on-background": "#191c1d",
+                    "surface-stone": "#E9ECEF"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "section-padding": "6rem",
+                    "stack-unit": "0.5rem",
+                    "margin-mobile": "1.25rem",
+                    "margin-desktop": "5rem",
+                    "gutter": "1.5rem"
+            },
+            "fontFamily": {
+                    "headline-sm": ["Montserrat"],
+                    "label-md": ["Inter"],
+                    "headline-lg": ["Montserrat"],
+                    "caption": ["Inter"],
+                    "headline-xl": ["Montserrat"],
+                    "display-lg-mobile": ["Montserrat"],
+                    "display-lg": ["Montserrat"],
+                    "body-lg": ["Outfit"],
+                    "body-md": ["Outfit"]
+            },
+            "fontSize": {
+                    "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "caption": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "headline-xl": ["48px", {"lineHeight": "56px", "fontWeight": "600"}],
+                    "display-lg-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .sidebar-active {
+            font-variation-settings: 'FILL' 1;
+        }
+        body {
+            background-color: #f8f9fa;
+            color: #191c1d;
+            font-family: 'Outfit', sans-serif;
+        }
+        .premium-card-shadow {
+            box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.04);
+        }
+        .glass-nav {
+            backdrop-filter: blur(8px);
+            background: rgba(254, 254, 254, 0.8);
+        }
+        .status-pill-confirmed {
+            background-color: #c1ecd4;
+            color: #002114;
+        }
+        .status-pill-pending {
+            background-color: #ffdf9a;
+            color: #251a00;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+<!-- SideNavBar (Authority Source: JSON) -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-surface-container-lowest dark:bg-surface-container-high shadow-sm flex flex-col py-8 px-4 gap-2 z-50">
+<div class="mb-8 px-2">
+<h1 class="text-headline-sm font-headline-sm font-bold text-primary dark:text-primary-fixed">Discover Jharkhand</h1>
+<p class="text-body-md font-body-md text-on-surface-variant opacity-70">Partner Dashboard</p>
+</div>
+<nav class="flex-grow space-y-1">
+<!-- Active: Dashboard -->
+<a class="flex items-center gap-3 bg-primary-container text-on-primary-container rounded-lg px-4 py-3 font-semibold transition-transform duration-200 active:scale-95" href="#">
+<span class="material-symbols-outlined sidebar-active" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="text-label-md font-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-lg px-4 py-3 transition-colors active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined">bed</span>
+<span class="text-label-md font-label-md">Room Inventory</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-lg px-4 py-3 transition-colors active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined">contact_mail</span>
+<span class="text-label-md font-label-md">Booking Enquiries</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-lg px-4 py-3 transition-colors active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="text-label-md font-label-md">Revenue Tracking</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-lg px-4 py-3 transition-colors active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined">domain</span>
+<span class="text-label-md font-label-md">Property Details</span>
+</a>
+</nav>
+<div class="mt-auto pt-6 border-t border-outline-variant/30 space-y-1">
+<button class="w-full bg-primary text-white py-3 rounded-xl font-bold flex items-center justify-center gap-2 mb-4 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined">add</span>
+                Add New Room
+            </button>
+<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-lg px-4 py-3 transition-colors" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="text-label-md font-label-md">Support</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-lg px-4 py-3 transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-label-md font-label-md">Settings</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 min-h-screen relative flex flex-col">
+<!-- TopAppBar (Authority Source: JSON) -->
+<header class="flex justify-between items-center w-full h-16 px-margin-desktop sticky top-0 z-40 bg-background-off-white dark:bg-on-surface border-b border-outline-variant/20 glass-nav">
+<div class="flex items-center gap-8">
+<span class="text-headline-sm font-headline-sm font-black text-primary dark:text-primary-fixed uppercase tracking-tighter">Partner Portal</span>
+<nav class="hidden md:flex gap-6">
+<a class="text-primary font-bold border-b-2 border-primary pb-1" href="#">Overview</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Calendar</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Reports</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative group">
+<input class="bg-surface-container-low border-none rounded-full py-2 pl-4 pr-10 text-body-md focus:ring-2 focus:ring-primary w-64 transition-all" placeholder="Search bookings..." type="text"/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+</div>
+<button class="p-2 rounded-full hover:bg-surface-container transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<div class="flex items-center gap-3 ml-2 border-l border-outline-variant pl-4">
+<div class="text-right">
+<p class="text-label-md font-bold text-on-surface leading-tight">Saranda Retreat</p>
+<p class="text-caption text-on-surface-variant">Vendor ID: #JH982</p>
+</div>
+<img class="w-10 h-10 rounded-full border border-outline-variant object-cover" data-alt="A professional headshot of a boutique hotel manager in Jharkhand, wearing a subtle linen shirt, against a soft-focus background of a luxurious wooden cabin interior. The lighting is warm and cinematic, reflecting a high-trust, premium service environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQjQkdpdrIFrBoS9pqkUbzW1dYy0kTdKX5zj0Fi3POTR3JbFeYHKvbWXSMUTVpwWizJDNY7IAda_XdnfhdEP8oglliL04SMVeuAEmBhMHV7UhD0Gm76c6pQI0iu87KTu1bpAKJUUIXK_2JV_fc6yJ3_V6Ec84vYS9xpkp2bUUjxdcgVbUJHkrrNrkVF4G-VHYvHR71C4TFAvT2ITwQtjNtyeiME3roqW9-WWkZI4BqPxMrPVWAvS4PrldVLd40AczBslUg-SWVDJnT"/>
+</div>
+</div>
+</header>
+<!-- Page Content -->
+<div class="p-margin-desktop space-y-12">
+<!-- 1. Overview Section -->
+<section>
+<div class="flex items-end justify-between mb-8">
+<div>
+<h2 class="text-headline-lg font-headline-lg text-primary">Overview</h2>
+<p class="text-body-lg text-on-surface-variant">Property performance at a glance for today.</p>
+</div>
+<div class="flex gap-2">
+<button class="px-4 py-2 bg-surface-stone text-primary rounded-lg text-label-md hover:bg-surface-container-high transition-colors">Export Data</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Today's Occupancy -->
+<div class="bg-surface-container-lowest p-6 rounded-xl premium-card-shadow border border-outline-variant/10 group hover:border-primary/20 transition-all">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-primary-fixed rounded-lg">
+<span class="material-symbols-outlined text-primary">meeting_room</span>
+</div>
+<span class="text-caption text-on-primary-container font-bold">+2% from yesterday</span>
+</div>
+<p class="text-label-md text-on-surface-variant font-medium">Today's Occupancy</p>
+<h3 class="text-headline-lg font-headline-lg text-on-surface">85%</h3>
+<div class="w-full bg-surface-container h-1.5 rounded-full mt-4 overflow-hidden">
+<div class="bg-primary h-full w-[85%] rounded-full"></div>
+</div>
+</div>
+<!-- Pending Enquiries -->
+<div class="bg-surface-container-lowest p-6 rounded-xl premium-card-shadow border border-outline-variant/10 group hover:border-primary/20 transition-all">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-secondary-fixed rounded-lg">
+<span class="material-symbols-outlined text-secondary">mail</span>
+</div>
+<span class="text-caption text-error font-bold">Action Required</span>
+</div>
+<p class="text-label-md text-on-surface-variant font-medium">Pending Enquiries</p>
+<h3 class="text-headline-lg font-headline-lg text-on-surface">12</h3>
+<p class="text-caption text-on-surface-variant mt-4">4 new since 08:00 AM</p>
+</div>
+<!-- Total Revenue (June) -->
+<div class="bg-surface-container-lowest p-6 rounded-xl premium-card-shadow border border-outline-variant/10 group hover:border-primary/20 transition-all">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-tertiary-fixed rounded-lg">
+<span class="material-symbols-outlined text-tertiary">payments</span>
+</div>
+<span class="text-caption text-on-tertiary-fixed-variant font-bold">Target: ₹5L</span>
+</div>
+<p class="text-label-md text-on-surface-variant font-medium">Total Revenue (June)</p>
+<h3 class="text-headline-lg font-headline-lg text-on-surface">₹4.2L</h3>
+<p class="text-caption text-on-surface-variant mt-4">84% of monthly target achieved</p>
+</div>
+<!-- Guest Rating -->
+<div class="bg-surface-container-lowest p-6 rounded-xl premium-card-shadow border border-outline-variant/10 group hover:border-primary/20 transition-all">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-water-blue/10 rounded-lg">
+<span class="material-symbols-outlined text-water-blue" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="text-caption text-on-surface-variant">Top 5% in Region</span>
+</div>
+<p class="text-label-md text-on-surface-variant font-medium">Guest Rating</p>
+<h3 class="text-headline-lg font-headline-lg text-on-surface">4.8/5</h3>
+<div class="flex gap-0.5 mt-4">
+<span class="material-symbols-outlined text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 0.8;">star_half</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. Room Inventory Management & 4. Performance Chart (Grid Layout) -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Room Inventory Section -->
+<section class="lg:col-span-2">
+<div class="flex items-center justify-between mb-6">
+<h2 class="text-headline-sm font-headline-sm text-primary">Room Categories</h2>
+<a class="text-primary font-bold text-label-md hover:underline" href="#">View All Inventory</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Room Card 1 -->
+<div class="bg-white rounded-xl overflow-hidden premium-card-shadow group">
+<div class="h-48 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A luxury eco-friendly wooden cabin nestled in the lush, deep green Sal forest of Jharkhand. The lighting is cinematic, capturing the golden hour sun filtering through the trees, illuminating the modern architecture and premium stone textures of the exterior. Ethereal forest mist adds depth and atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcNJ5IplG8nW5-P3SXdA8nfhMkdc5MwVRxE7vOdzExErJqbyRet6bccLLNFWqBKziydLFUvUygSErGVC0NeZI7TepRLNvp1txf8jDClioxhRRPXIwU7uUIMcVyg_zaaxDTqTekYPk3EkJwMbEMu2SslJ9ss3OCMeoZ69dVeAhYaaoQHZKDguJYbumexYGijbvzh8k9sC-iemk1PyyKcwktxGkuyXpt8aD3uIUhubZV5BR50x_gemXhzZvXL7VOKxdYP-R_BuSn0zvh"/>
+<div class="absolute top-4 left-4">
+<span class="bg-primary text-white px-3 py-1 rounded-full text-caption font-bold">Verified Jharkhand</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h4 class="text-headline-sm font-bold text-on-surface">Deluxe Forest Cabin</h4>
+<span class="text-primary font-bold">₹6,500<span class="text-caption font-normal text-on-surface-variant">/night</span></span>
+</div>
+<p class="text-body-md text-on-surface-variant mb-6">Experience the serenity of Saranda with floor-to-ceiling forest views.</p>
+<div class="flex items-center justify-between pt-4 border-t border-outline-variant/30">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">event_available</span>
+<span class="text-label-md text-on-surface font-semibold">8/10 Available</span>
+</div>
+<button class="border border-secondary text-secondary px-4 py-2 rounded-lg text-label-md font-bold hover:bg-secondary hover:text-white transition-all active:scale-95">Manage Rates</button>
+</div>
+</div>
+</div>
+<!-- Room Card 2 -->
+<div class="bg-white rounded-xl overflow-hidden premium-card-shadow group">
+<div class="h-48 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A sophisticated pine-wood suite interior featuring warm earth tones and minimalist luxury furniture. Large windows look out onto a panoramic view of Jharkhand's rolling hills and waterfalls at dusk. The mood is calm, high-end, and perfectly aligned with the Ethereal Jharkhand cinematic minimalist aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKkp04wAkkGQFQqlbPmvQR_9x5V5tlAOMIbz-maJ2DzTM-45lPq00GkNq7wUCpkMYP2ergaYneoSPezFU17ATX73pLIivUTtODeaoMPitkHhCx7K7mJMa46Fmj-_ipTgYdHViaswlEvn9c2qMg4uIQeHGXgE6f0WnhCJ8_rpRyY8afrioviBfw8D1LmnoDHu9eerXBxbCjevFKJ1MVci5z8JJbYxXRKu44iSQQjRD5Q7cMjVuPCqOTlYFo6-RsXntEOHwosxyrAo9a"/>
+<div class="absolute top-4 left-4">
+<span class="bg-primary text-white px-3 py-1 rounded-full text-caption font-bold">Verified Jharkhand</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h4 class="text-headline-sm font-bold text-on-surface">Pine Suite</h4>
+<span class="text-primary font-bold">₹9,200<span class="text-caption font-normal text-on-surface-variant">/night</span></span>
+</div>
+<p class="text-body-md text-on-surface-variant mb-6">Elevated mountain living with private balcony and heated bath.</p>
+<div class="flex items-center justify-between pt-4 border-t border-outline-variant/30">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-error text-[18px]">warning</span>
+<span class="text-label-md text-error font-semibold">2/5 Available</span>
+</div>
+<button class="border border-secondary text-secondary px-4 py-2 rounded-lg text-label-md font-bold hover:bg-secondary hover:text-white transition-all active:scale-95">Manage Rates</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Booking Trends Chart -->
+<section>
+<div class="flex items-center justify-between mb-6">
+<h2 class="text-headline-sm font-headline-sm text-primary">Booking Trends</h2>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl premium-card-shadow h-[calc(100%-4rem)] flex flex-col">
+<div class="flex items-center justify-between mb-8">
+<p class="text-label-md text-on-surface-variant">Last 3 Months Growth</p>
+<span class="text-primary font-bold text-label-md">+14.2%</span>
+</div>
+<div class="flex-grow flex items-end gap-3 px-2">
+<!-- Simple Animated CSS Bars -->
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full bg-primary/10 rounded-t-lg relative h-32 overflow-hidden transition-all group-hover:bg-primary/20">
+<div class="absolute bottom-0 left-0 w-full bg-primary/40 h-[60%] animate-[slideUp_1s_ease-out]"></div>
+</div>
+<span class="text-caption text-on-surface-variant">April</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full bg-primary/10 rounded-t-lg relative h-32 overflow-hidden transition-all group-hover:bg-primary/20">
+<div class="absolute bottom-0 left-0 w-full bg-primary/60 h-[75%] animate-[slideUp_1.2s_ease-out]"></div>
+</div>
+<span class="text-caption text-on-surface-variant">May</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full bg-primary/10 rounded-t-lg relative h-32 overflow-hidden transition-all group-hover:bg-primary/20">
+<div class="absolute bottom-0 left-0 w-full bg-primary h-[95%] animate-[slideUp_1.4s_ease-out]"></div>
+</div>
+<span class="text-caption font-bold text-primary">June</span>
+</div>
+</div>
+<div class="mt-8 space-y-3">
+<div class="flex justify-between text-body-md">
+<span class="text-on-surface-variant">Peak Demand</span>
+<span class="font-bold">Weekends</span>
+</div>
+<div class="flex justify-between text-body-md">
+<span class="text-on-surface-variant">Top Source</span>
+<span class="font-bold">Direct Portal</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- 3. Recent Booking Enquiries -->
+<section class="pb-20">
+<div class="flex items-center justify-between mb-6">
+<h2 class="text-headline-sm font-headline-sm text-primary">Recent Booking Enquiries</h2>
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors text-label-md">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+                        Filter
+                    </button>
+</div>
+<div class="bg-white rounded-xl premium-card-shadow overflow-hidden border border-outline-variant/10">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-stone">
+<tr>
+<th class="px-6 py-4 text-label-md text-on-surface-variant uppercase tracking-wider">Guest Name</th>
+<th class="px-6 py-4 text-label-md text-on-surface-variant uppercase tracking-wider">Room Category</th>
+<th class="px-6 py-4 text-label-md text-on-surface-variant uppercase tracking-wider">Duration</th>
+<th class="px-6 py-4 text-label-md text-on-surface-variant uppercase tracking-wider">Status</th>
+<th class="px-6 py-4 text-label-md text-on-surface-variant uppercase tracking-wider text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/20">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed-dim flex items-center justify-center text-on-secondary-fixed font-bold text-caption">AV</div>
+<div>
+<p class="text-body-md font-bold text-on-surface">Aditya Verma</p>
+<p class="text-caption text-on-surface-variant">Request ID: #ENQ-901</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5 text-body-md text-on-surface">Deluxe Cabin</td>
+<td class="px-6 py-5 text-body-md text-on-surface">2 Nights</td>
+<td class="px-6 py-5">
+<span class="px-3 py-1 rounded-full text-caption font-bold status-pill-pending">Awaiting Confirmation</span>
+</td>
+<td class="px-6 py-5 text-right">
+<div class="flex justify-end gap-2">
+<button class="p-2 hover:bg-primary-fixed rounded-full text-primary transition-colors" title="Confirm">
+<span class="material-symbols-outlined">check_circle</span>
+</button>
+<button class="p-2 hover:bg-error-container rounded-full text-error transition-colors" title="Decline">
+<span class="material-symbols-outlined">cancel</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-fixed-dim flex items-center justify-center text-on-primary-fixed font-bold text-caption">MS</div>
+<div>
+<p class="text-body-md font-bold text-on-surface">Megha Singh</p>
+<p class="text-caption text-on-surface-variant">Request ID: #ENQ-885</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5 text-body-md text-on-surface">Pine Suite</td>
+<td class="px-6 py-5 text-body-md text-on-surface">3 Nights</td>
+<td class="px-6 py-5">
+<span class="px-3 py-1 rounded-full text-caption font-bold status-pill-confirmed">Confirmed</span>
+</td>
+<td class="px-6 py-5 text-right">
+<button class="text-on-surface-variant hover:text-primary p-2">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+</main>
+<!-- Micro-interactions Script -->
+<script>
+        // Simple animation logic if needed, otherwise handled by Tailwind
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('mousedown', () => btn.classList.add('scale-95'));
+            btn.addEventListener('mouseup', () => btn.classList.remove('scale-95'));
+            btn.addEventListener('mouseleave', () => btn.classList.remove('scale-95'));
+        });
+
+        // Add custom keyframe for chart animation
+        const style = document.createElement('style');
+        style.innerHTML = `
+            @keyframes slideUp {
+                from { height: 0%; opacity: 0; }
+                to { opacity: 1; }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body></html>

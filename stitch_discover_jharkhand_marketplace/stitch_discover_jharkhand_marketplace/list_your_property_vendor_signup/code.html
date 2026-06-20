@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>List Your Property | Discover Jharkhand</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&amp;family=Outfit:wght@400;500&amp;family=Inter:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "text-onyx": "#121417",
+                    "on-primary-container": "#86af99",
+                    "background-off-white": "#FEFEFE",
+                    "on-primary": "#ffffff",
+                    "inverse-surface": "#2e3132",
+                    "surface-container": "#edeeef",
+                    "primary-container": "#1b4332",
+                    "on-surface-variant": "#414844",
+                    "outline": "#717973",
+                    "primary-fixed": "#c1ecd4",
+                    "on-tertiary-container": "#d19f00",
+                    "surface-container-high": "#e7e8e9",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed": "#ffdf9a",
+                    "water-blue": "#0077B6",
+                    "surface-variant": "#e1e3e4",
+                    "tertiary-fixed-dim": "#f8be00",
+                    "on-surface": "#191c1d",
+                    "surface-container-highest": "#e1e3e4",
+                    "on-secondary-fixed": "#27190d",
+                    "surface": "#f8f9fa",
+                    "secondary-container": "#f6dbc8",
+                    "on-secondary-container": "#735f50",
+                    "surface-stone": "#E9ECEF",
+                    "secondary-fixed": "#f9ddcb",
+                    "on-error-container": "#93000a",
+                    "inverse-primary": "#a5d0b9",
+                    "surface-tint": "#3f6653",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-low": "#f3f4f5",
+                    "error-container": "#ffdad6",
+                    "tertiary": "#322400",
+                    "on-background": "#191c1d",
+                    "surface-bright": "#f8f9fa",
+                    "secondary-fixed-dim": "#dcc2b0",
+                    "on-tertiary-fixed-variant": "#5a4300",
+                    "error": "#ba1a1a",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed": "#002114",
+                    "inverse-on-surface": "#f0f1f2",
+                    "tertiary-container": "#4d3900",
+                    "secondary": "#6e5a4c",
+                    "background": "#f8f9fa",
+                    "surface-container-lowest": "#ffffff",
+                    "outline-variant": "#c1c8c2",
+                    "primary": "#012d1d",
+                    "on-tertiary-fixed": "#251a00",
+                    "on-primary-fixed-variant": "#274e3d",
+                    "surface-dim": "#d9dadb",
+                    "on-secondary-fixed-variant": "#554336",
+                    "primary-fixed-dim": "#a5d0b9"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "1.25rem",
+                    "margin-desktop": "5rem",
+                    "gutter": "1.5rem",
+                    "stack-unit": "0.5rem",
+                    "section-padding": "6rem"
+            },
+            "fontFamily": {
+                    "caption": ["Inter"],
+                    "headline-xl": ["Montserrat"],
+                    "label-md": ["Inter"],
+                    "display-lg": ["Montserrat"],
+                    "body-md": ["Outfit"],
+                    "body-lg": ["Outfit"],
+                    "headline-sm": ["Montserrat"],
+                    "headline-lg": ["Montserrat"],
+                    "display-lg-mobile": ["Montserrat"]
+            },
+            "fontSize": {
+                    "caption": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "headline-xl": ["48px", {"lineHeight": "56px", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "display-lg-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .form-step { display: none; }
+        .form-step.active { display: block; }
+        .step-indicator.active { background-color: #012d1d; color: white; }
+        .step-indicator.complete { background-color: #c1ecd4; color: #012d1d; }
+    </style>
+</head>
+<body class="bg-background-off-white font-body-md text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/90 dark:bg-primary/90 backdrop-blur-md shadow-sm transition-all duration-300 ease-in-out flex justify-between items-center px-margin-desktop py-4 max-w-full">
+<div class="font-display-lg-mobile text-display-lg-mobile font-bold text-primary dark:text-primary-fixed">Discover Jharkhand</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary transition-opacity" href="#">Destinations</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary transition-opacity" href="#">Forest Retreats</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary transition-opacity" href="#">Cab Hire</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary transition-opacity" href="#">Culture</a>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-label-md hover:opacity-90 transition-all">Plan My Trip</button>
+</div>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative h-[716px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center" data-alt="A cinematic, wide-angle photograph of a premium luxury eco-resort nestled deep within a lush, misty Sal forest in Jharkhand. The architectural style blends modern glass elements with organic wooden textures and stone accents. The lighting is soft and golden, suggesting a late afternoon sun filtering through the dense canopy of ancient trees. The overall mood is serene, high-end, and inviting, capturing the essence of 'Ethereal Jharkhand'." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBpaXoXl057ztQUTeMm39P3vMt1amJlBBu6pQ8kk8CFnHTAc-lihHd2BATEi7u7OQj726dk1ivN6CFJWMvPP3ea65HoQEgvUjkKpiw9jzGw6-gpnH2p1K4Nj3MmCm-qJhgEuckhh9hZ9Xf53aKHeAyyCXb5066wJR6HRLWmL7T0nnFG9j2IH1RzfKZtU93v2df6sd2pFPUrl7ReurRgjrlMJf8C0toqUxftBWc4fk1NXZxZYulVRccIHRroLSfaSEcErrMRroA9qKgk')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/30 to-transparent"></div>
+</div>
+<div class="relative z-10 px-margin-desktop w-full max-w-4xl">
+<div class="inline-flex items-center gap-2 bg-on-tertiary-container/20 backdrop-blur-sm border border-tertiary-fixed/30 px-4 py-1.5 rounded-full mb-6">
+<span class="material-symbols-outlined text-tertiary-fixed text-sm">verified_user</span>
+<span class="text-tertiary-fixed font-label-md text-caption uppercase tracking-wider">Vendor Registration Open</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-primary mb-6">Partner with Discover Jharkhand</h1>
+<p class="font-body-lg text-body-lg text-primary-fixed max-w-2xl">Join the digital gateway to Jharkhand's tourism. Reach thousands of travelers and grow your business with our premium partner ecosystem.</p>
+<div class="mt-10 flex gap-4">
+<a class="bg-tertiary-fixed text-on-tertiary-fixed px-8 py-4 rounded-lg font-headline-sm hover:scale-105 transition-transform inline-block" href="#onboarding">Start Application</a>
+<a class="border border-on-primary text-on-primary px-8 py-4 rounded-lg font-headline-sm hover:bg-on-primary/10 transition-all" href="#benefits">Explore Benefits</a>
+</div>
+</div>
+</section>
+<!-- Value Propositions -->
+<section class="py-section-padding px-margin-desktop bg-surface-container-low" id="benefits">
+<div class="text-center mb-16">
+<h2 class="font-headline-xl text-headline-xl text-primary mb-4">Empowering Local Excellence</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">We provide the tools and visibility you need to thrive in the modern travel landscape.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-gutter">
+<!-- Benefit 1 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 group border border-outline-variant/20">
+<div class="w-16 h-16 bg-primary-fixed-dim/30 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-primary text-3xl group-hover:text-on-primary">visibility</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-4">Direct Visibility</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Get listed on Jharkhand's primary travel discovery platform, placing your brand in front of high-intent travelers actively searching for authentic regional experiences.</p>
+</div>
+<!-- Benefit 2 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 group border border-outline-variant/20">
+<div class="w-16 h-16 bg-primary-fixed-dim/30 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-primary text-3xl group-hover:text-on-primary">verified</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-4">Verified Trust</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Join a prestigious network of government-recognized premium partners. The "Verified Jharkhand" badge signals reliability and quality to every potential customer.</p>
+</div>
+<!-- Benefit 3 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 group border border-outline-variant/20">
+<div class="w-16 h-16 bg-primary-fixed-dim/30 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-primary text-3xl group-hover:text-on-primary">dashboard_customize</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-4">Seamless Management</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Access an intuitive partner dashboard to track real-time bookings, manage service inventory, and respond to traveler enquiries from any device, anywhere.</p>
+</div>
+</div>
+</section>
+<!-- Multi-Step Onboarding Form -->
+<section class="py-section-padding px-margin-desktop bg-background-off-white" id="onboarding">
+<div class="max-w-4xl mx-auto">
+<div class="bg-surface-container-lowest rounded-2xl shadow-xl overflow-hidden border border-outline-variant/30">
+<!-- Progress Bar -->
+<div class="flex items-center bg-surface-stone/50 px-8 py-6 border-b border-outline-variant/20">
+<div class="flex items-center gap-4 flex-1">
+<div class="step-indicator active w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm border-2 border-primary transition-all" id="ind-1">1</div>
+<span class="font-label-md text-primary hidden md:inline">Business Details</span>
+</div>
+<div class="w-12 h-px bg-outline-variant"></div>
+<div class="flex items-center gap-4 px-4 flex-1">
+<div class="step-indicator w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm border-2 border-outline-variant text-outline-variant transition-all" id="ind-2">2</div>
+<span class="font-label-md text-outline-variant hidden md:inline">Location &amp; Assets</span>
+</div>
+<div class="w-12 h-px bg-outline-variant"></div>
+<div class="flex items-center gap-4 flex-1 justify-end">
+<div class="step-indicator w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm border-2 border-outline-variant text-outline-variant transition-all" id="ind-3">3</div>
+<span class="font-label-md text-outline-variant hidden md:inline">Verification</span>
+</div>
+</div>
+<form class="p-8 md:p-12" id="vendorForm">
+<!-- Step 1: Business Details -->
+<div class="form-step active space-y-6" id="step-1">
+<div class="grid md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label-md text-primary">Business Name</label>
+<input class="w-full px-4 py-3 rounded-lg border-stone-grey focus:ring-primary focus:border-primary border bg-surface-bright outline-none transition-all" placeholder="e.g. Saranda Echo Resort" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-primary">Owner Name</label>
+<input class="w-full px-4 py-3 rounded-lg border-stone-grey focus:ring-primary focus:border-primary border bg-surface-bright outline-none transition-all" placeholder="Full legal name" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-primary">Business Type</label>
+<select class="w-full px-4 py-3 rounded-lg border-stone-grey focus:ring-primary focus:border-primary border bg-surface-bright outline-none transition-all">
+<option>Hotel/Resort</option>
+<option>Cab Operator</option>
+<option>Restaurant</option>
+<option>Tour Guide</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-primary">Phone Number</label>
+<input class="w-full px-4 py-3 rounded-lg border-stone-grey focus:ring-primary focus:border-primary border bg-surface-bright outline-none transition-all" placeholder="+91" type="tel"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-primary">WhatsApp Number</label>
+<input class="w-full px-4 py-3 rounded-lg border-stone-grey focus:ring-primary focus:border-primary border bg-surface-bright outline-none transition-all" placeholder="For instant enquiries" type="tel"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-primary">Email Address</label>
+<input class="w-full px-4 py-3 rounded-lg border-stone-grey focus:ring-primary focus:border-primary border bg-surface-bright outline-none transition-all" placeholder="contact@yourbusiness.com" type="email"/>
+</div>
+</div>
+<div class="pt-8 flex justify-end">
+<button class="bg-primary text-on-primary px-10 py-4 rounded-lg font-headline-sm hover:bg-primary/90 flex items-center gap-2 transition-all" onclick="nextStep(2)" type="button">
+                                    Next Step
+                                    <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Step 2: Location & Assets -->
+<div class="form-step space-y-6" id="step-2">
+<div class="grid md:grid-cols-2 gap-6">
+<div class="md:col-span-2 space-y-2">
+<label class="font-label-md text-primary">Full Address</label>
+<textarea class="w-full px-4 py-3 rounded-lg border-stone-grey focus:ring-primary focus:border-primary border bg-surface-bright outline-none transition-all" placeholder="Exact physical location of the business or headquarters" rows="3"></textarea>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-primary">City/District</label>
+<select class="w-full px-4 py-3 rounded-lg border-stone-grey focus:ring-primary focus:border-primary border bg-surface-bright outline-none transition-all">
+<option>Ranchi</option>
+<option>Jamshedpur</option>
+<option>Dhanbad</option>
+<option>Hazaribagh</option>
+<option>Netarhat</option>
+<option>Dumka</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-primary">Pincode</label>
+<input class="w-full px-4 py-3 rounded-lg border-stone-grey focus:ring-primary focus:border-primary border bg-surface-bright outline-none transition-all" placeholder="6-digit PIN" type="text"/>
+</div>
+</div>
+<div class="space-y-4">
+<label class="font-label-md text-primary">Property/Vehicle Photos</label>
+<div class="border-2 border-dashed border-outline-variant rounded-xl p-10 text-center hover:border-primary hover:bg-primary/5 transition-all cursor-pointer group">
+<span class="material-symbols-outlined text-5xl text-outline-variant group-hover:text-primary mb-4">cloud_upload</span>
+<p class="text-on-surface-variant font-body-md">Drag and drop high-resolution photos here</p>
+<p class="text-outline text-caption mt-2">JPG, PNG up to 10MB each. Min 3 photos recommended.</p>
+<input class="hidden" multiple="" type="file"/>
+</div>
+</div>
+<div class="pt-8 flex justify-between">
+<button class="text-primary font-headline-sm flex items-center gap-2 hover:underline" onclick="nextStep(1)" type="button">
+<span class="material-symbols-outlined">arrow_back</span>
+                                    Back
+                                </button>
+<button class="bg-primary text-on-primary px-10 py-4 rounded-lg font-headline-sm hover:bg-primary/90 flex items-center gap-2 transition-all" onclick="nextStep(3)" type="button">
+                                    Verification Documents
+                                    <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Step 3: Verification -->
+<div class="form-step space-y-6" id="step-3">
+<div class="bg-secondary-container/20 p-6 rounded-xl border border-secondary-fixed/30 mb-8">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-secondary-fixed-dim">info</span>
+<p class="text-on-secondary-container font-body-md">To maintain the premium quality of the Discover Jharkhand marketplace, all vendors must provide valid business registration. Our team will verify these within 48 business hours.</p>
+</div>
+</div>
+<div class="grid md:grid-cols-2 gap-8">
+<div class="space-y-4">
+<label class="font-label-md text-primary">GST Number</label>
+<input class="w-full px-4 py-3 rounded-lg border-stone-grey focus:ring-primary focus:border-primary border bg-surface-bright outline-none transition-all uppercase" placeholder="22AAAAA0000A1Z5" type="text"/>
+<div class="mt-4">
+<p class="font-label-md text-primary mb-2">Upload GST Certificate</p>
+<label class="block w-full text-sm text-outline-variant file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-primary-fixed file:text-on-primary-fixed hover:file:bg-primary-fixed-dim cursor-pointer">
+<input class="block w-full" type="file"/>
+</label>
+</div>
+</div>
+<div class="space-y-4">
+<label class="font-label-md text-primary">Trade License / Registration Number</label>
+<input class="w-full px-4 py-3 rounded-lg border-stone-grey focus:ring-primary focus:border-primary border bg-surface-bright outline-none transition-all" placeholder="Valid registration number" type="text"/>
+<div class="mt-4">
+<p class="font-label-md text-primary mb-2">Upload License Copy</p>
+<label class="block w-full text-sm text-outline-variant file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-primary-fixed file:text-on-primary-fixed hover:file:bg-primary-fixed-dim cursor-pointer">
+<input class="block w-full" type="file"/>
+</label>
+</div>
+</div>
+</div>
+<div class="flex items-start gap-3 mt-10">
+<input class="mt-1 rounded border-outline-variant text-primary focus:ring-primary" id="terms" type="checkbox"/>
+<label class="text-caption text-on-surface-variant" for="terms">I hereby declare that the information provided is true and accurate. I agree to the <a class="text-primary underline" href="#">Partner Terms of Service</a> and the <a class="text-primary underline" href="#">Code of Conduct</a> for Jharkhand Tourism Partners.</label>
+</div>
+<div class="pt-8 flex justify-between items-center">
+<button class="text-primary font-headline-sm flex items-center gap-2 hover:underline" onclick="nextStep(2)" type="button">
+<span class="material-symbols-outlined">arrow_back</span>
+                                    Back
+                                </button>
+<button class="bg-primary text-on-primary px-12 py-5 rounded-lg font-headline-sm hover:scale-105 transition-all shadow-lg flex items-center gap-3" type="submit">
+                                    Submit Application
+                                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">send</span>
+</button>
+</div>
+</div>
+</form>
+</div>
+</div>
+</section>
+<!-- Social Proof / Testimonial -->
+<section class="py-section-padding bg-primary overflow-hidden relative">
+
+<div class="relative z-10 px-margin-desktop max-w-5xl mx-auto">
+<div class="bg-surface-container-lowest/10 backdrop-blur-md rounded-3xl p-12 border border-on-primary/10 flex flex-col md:flex-row gap-12 items-center">
+<div class="w-32 h-32 flex-shrink-0 rounded-full border-4 border-tertiary-fixed overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional portrait of a successful local business owner, a middle-aged woman with a warm and confident smile, dressed in elegant regional attire. She is standing in front of a well-maintained, high-end guest house with wooden carvings. The lighting is soft morning light, creating a professional and trustworthy atmosphere. The image feels grounded, successful, and representative of a thriving Jharkhand entrepreneur." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCD2-ALX09lG6B8o0xKdZeuV_zT8rztvrRQZtg7322LaP494ttc0D6NUX94tRNB70gd4NXao08gQCZk7enFPf0zYumr4npTqQPpGz_Xj0n7iaA63aOgTWQQ0-STbVyMW-xd_U7oCdvANd1V-fHvX6goZCVN2lZ-DvuIBEHQSbc5bKYJC4ic9GKjNuSE55aW_4RDiGKXUvZZDmWZntymEJMmFpRrX-aZOtLyCojrotTGAbgGcxAN0hsgevvPgxmBXsMZyDKUYpkaWvCv"/>
+</div>
+<div class="flex-1">
+<span class="material-symbols-outlined text-tertiary-fixed text-5xl mb-6" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+<p class="font-headline-lg text-headline-lg text-on-primary mb-8 italic">"Joining Discover Jharkhand was the single best decision for our retreat. Our bookings increased by 40% in just six months, and the quality of guests we receive has significantly improved. It's more than a platform; it's a partnership for growth."</p>
+<div>
+<p class="font-headline-sm text-on-primary">Anjali Mahato</p>
+<p class="font-label-md text-primary-fixed opacity-80">Owner, The Orchid Forest Lodge, Ranchi</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-section-padding px-margin-desktop text-center bg-background-off-white">
+<h2 class="font-headline-xl text-headline-xl text-primary mb-6">Ready to Scale Your Tourism Business?</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-10">Start your journey today and become part of Jharkhand's official premium travel network.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<a class="bg-primary text-on-primary px-10 py-4 rounded-lg font-headline-sm hover:shadow-xl transition-all" href="#onboarding">Register Now</a>
+<a class="border border-primary text-primary px-10 py-4 rounded-lg font-headline-sm hover:bg-primary/5 transition-all" href="#">Download Partner Brochure</a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full rounded-t-xl bg-surface-container-highest dark:bg-primary flex flex-col md:flex-row justify-between items-start px-margin-desktop py-section-padding gap-gutter">
+<div class="max-w-md">
+<div class="font-headline-lg text-headline-lg text-primary dark:text-primary-fixed mb-4">Discover Jharkhand</div>
+<p class="text-on-surface-variant dark:text-surface-variant mb-6 font-body-md">The official digital portal for Jharkhand's tourism. Exploring the soul of the forest, one destination at a time.</p>
+<p class="font-body-md text-body-md text-primary dark:text-primary-fixed">© 2024 Discover Jharkhand. Govt. Recognized Tourism Partner.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-8 w-full md:w-auto">
+<div class="flex flex-col gap-3">
+<span class="font-label-md text-primary dark:text-primary-fixed uppercase tracking-wider mb-2">Platform</span>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed underline transition-all font-body-md" href="#">About Us</a>
+<a class="text-primary font-bold transition-all font-body-md" href="#">List Your Property</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed underline transition-all font-body-md" href="#">Travel Insurance</a>
+</div>
+<div class="flex flex-col gap-3">
+<span class="font-label-md text-primary dark:text-primary-fixed uppercase tracking-wider mb-2">Support</span>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed underline transition-all font-body-md" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed underline transition-all font-body-md" href="#">Contact Support</a>
+</div>
+<div class="flex flex-col gap-3 col-span-2 md:col-span-1">
+<span class="font-label-md text-primary dark:text-primary-fixed uppercase tracking-wider mb-2">Connect</span>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary transition-all text-primary hover:text-on-primary" href="#">
+<span class="material-symbols-outlined">share</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary transition-all text-primary hover:text-on-primary" href="#">
+<span class="material-symbols-outlined">public</span>
+</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        function nextStep(step) {
+            // Update Indicators
+            document.querySelectorAll('.step-indicator').forEach((el, index) => {
+                const currentIdx = index + 1;
+                el.classList.remove('active', 'complete');
+                if(currentIdx < step) {
+                    el.classList.add('complete');
+                    el.innerHTML = '<span class="material-symbols-outlined text-sm">check</span>';
+                } else if (currentIdx === step) {
+                    el.classList.add('active');
+                    el.innerHTML = step;
+                } else {
+                    el.innerHTML = currentIdx;
+                }
+            });
+
+            // Update Label Styles
+            document.querySelectorAll('span.font-label-md').forEach((el, index) => {
+                const currentIdx = index + 1;
+                el.classList.remove('text-primary', 'text-outline-variant');
+                if(currentIdx <= step) {
+                    el.classList.add('text-primary');
+                } else {
+                    el.classList.add('text-outline-variant');
+                }
+            });
+
+            // Show current step
+            document.querySelectorAll('.form-step').forEach(s => s.classList.remove('active'));
+            document.getElementById('step-' + step).classList.add('active');
+            
+            // Scroll to form top
+            document.getElementById('onboarding').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        document.getElementById('vendorForm').onsubmit = (e) => {
+            e.preventDefault();
+            alert('Application submitted successfully! Our team will contact you within 48 hours.');
+        };
+    </script>
+</body></html>

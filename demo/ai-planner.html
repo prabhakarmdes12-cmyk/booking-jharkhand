@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Travel Planner â€” Booking Jharkhand</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&family=Montserrat:wght@600;700&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,200" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        primary: "#012d1d", "on-primary": "#ffffff", "primary-container": "#1b4332",
+        "on-primary-container": "#86af99", "primary-fixed": "#c1ecd4", "primary-fixed-dim": "#a5d0b9",
+        "on-primary-fixed": "#002114", "on-primary-fixed-variant": "#274e3d",
+        secondary: "#6e5a4c", "on-secondary": "#ffffff", "secondary-container": "#f6dbc8",
+        "on-secondary-container": "#735f50", "secondary-fixed": "#f9ddcb", "secondary-fixed-dim": "#dcc2b0",
+        "on-secondary-fixed": "#27190d", "on-secondary-fixed-variant": "#554336",
+        tertiary: "#322400", "on-tertiary": "#ffffff", "tertiary-container": "#4d3900",
+        "on-tertiary-container": "#d19f00", "tertiary-fixed": "#ffdf9a", "tertiary-fixed-dim": "#f8be00",
+        "on-tertiary-fixed": "#251a00", "on-tertiary-fixed-variant": "#5a4300",
+        error: "#ba1a1a", "on-error": "#ffffff", "error-container": "#ffdad6", "on-error-container": "#93000a",
+        background: "#f8f9fa", "on-background": "#191c1d",
+        surface: "#f8f9fa", "surface-dim": "#d9dadb", "surface-bright": "#f8f9fa",
+        "surface-container-lowest": "#ffffff", "surface-container-low": "#f3f4f5",
+        "surface-container": "#edeeef", "surface-container-high": "#e7e8e9", "surface-container-highest": "#e1e3e4",
+        "on-surface": "#191c1d", "on-surface-variant": "#414844",
+        "inverse-surface": "#2e3132", "inverse-on-surface": "#f0f1f2", "inverse-primary": "#a5d0b9",
+        outline: "#717973", "outline-variant": "#c1c8c2", "surface-tint": "#3f6653", "surface-variant": "#e1e3e4",
+        "water-blue": "#0077B6", "surface-stone": "#E9ECEF", "text-onyx": "#121417", "background-off-white": "#FEFEFE"
+      },
+      borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", "2xl": "1rem", "3xl": "1.5rem", full: "9999px" },
+      spacing: { "margin-mobile": "1.25rem", gutter: "1.5rem", "section-padding": "6rem", "margin-desktop": "5rem", "stack-unit": "0.5rem" },
+      fontFamily: { "display-lg": ["Montserrat"], "headline-xl": ["Montserrat"], "headline-lg": ["Montserrat"], "headline-sm": ["Montserrat"], "body-lg": ["Outfit"], "body-md": ["Outfit"], "label-md": ["Inter"], "caption": ["Inter"] },
+      fontSize: {
+        "display-lg": ["64px", { lineHeight: "72px", letterSpacing: "-0.02em", fontWeight: "700" }],
+        "display-lg-mobile": ["40px", { lineHeight: "48px", letterSpacing: "-0.01em", fontWeight: "700" }],
+        "headline-xl": ["48px", { lineHeight: "56px", fontWeight: "600" }],
+        "headline-lg": ["32px", { lineHeight: "40px", fontWeight: "600" }],
+        "headline-sm": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+        "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.05em", fontWeight: "600" }],
+        caption: ["12px", { lineHeight: "16px", fontWeight: "500" }]
+      }
+    }
+  }
+};
+  </script>
+  <script src="i18n.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: Outfit, sans-serif; background: #f8f9fa; color: #191c1d; }
+    .glass { backdrop-filter: blur(16px) saturate(180%); -webkit-backdrop-filter: blur(16px) saturate(180%); background: rgba(255,255,255,0.72); border: 1px solid rgba(255,255,255,0.3); }
+    .glass-dark { backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); background: rgba(1,45,29,0.75); border: 1px solid rgba(255,255,255,0.08); }
+    .card-hover { transition: all 0.4s cubic-bezier(0.25,0.46,0.45,0.94); }
+    .card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 40px -12px rgba(1,45,29,0.25); }
+    .hero-gradient { background: linear-gradient(135deg, rgba(1,45,29,0.85) 0%, rgba(27,67,50,0.6) 50%, rgba(0,0,0,0.3) 100%); }
+    .nav-link { position: relative; padding-bottom: 2px; }
+    .nav-link::after { content: ""; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: #a5d0b9; transition: width 0.3s ease; }
+    .nav-link:hover::after { width: 100%; }
+    .section-divider { width: 80px; height: 4px; background: linear-gradient(90deg, #1b4332, #a5d0b9); border-radius: 2px; margin: 1rem auto 0; }
+    .text-balance { text-wrap: balance; }
+    .btn-primary { background: #012d1d; color: #fff; padding: 0.75rem 2rem; border-radius: 0.5rem; font-weight: 600; font-size: 0.875rem; letter-spacing: 0.05em; transition: all 0.3s ease; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem; }
+    .btn-primary:hover { background: #1b4332; box-shadow: 0 8px 24px rgba(1,45,29,0.3); transform: translateY(-1px); }
+    .animate-fade-in { animation: fadeInUp 0.8s ease forwards; }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.3s; }
+    .delay-4 { animation-delay: 0.4s; }
+    .form-input { background: #f8f9fa; border: 1.5px solid #c1c8c2; border-radius: 0.75rem; padding: 0.75rem 1rem; font-size: 0.9rem; outline: none; transition: all 0.3s ease; width: 100%; font-family: Outfit, sans-serif; }
+    .form-input:focus { border-color: #012d1d; box-shadow: 0 0 0 3px rgba(1,45,29,0.1); }
+    .chip-btn { transition: all 0.3s ease; cursor: pointer; }
+    .chip-btn.active { background: #012d1d; color: #fff; border-color: #012d1d; }
+    .itinerary-output { transition: all 0.6s ease; }
+  </style>
+</head>
+<body>
+
+<nav class="fixed top-0 left-0 right-0 z-50 glass">
+  <div class="w-full px-5">
+    <div class="flex items-center justify-between h-16 lg:h-20">
+      <a href="index.html" class="flex items-center gap-2 shrink-0">
+        <img src="logo.png" alt="Booking Jharkhand" class="h-12 w-auto lg:h-14" />
+      </a>
+      <div class="hidden lg:flex items-center gap-8">
+        <a href="index.html" class="nav-link text-sm font-['Inter'] font-semibold text-[#191c1d] tracking-wider uppercase" data-i18n="nav_home">Home</a>
+        <a href="destinations.html" class="nav-link text-sm font-['Inter'] font-semibold text-[#191c1d] tracking-wider uppercase" data-i18n="nav_destinations">Destinations</a>
+        <a href="hotels.html" class="nav-link text-sm font-['Inter'] font-semibold text-[#191c1d] tracking-wider uppercase" data-i18n="nav_hotels">Hotels</a>
+        <a href="cab-booking.html" class="nav-link text-sm font-['Inter'] font-semibold text-[#191c1d] tracking-wider uppercase" data-i18n="nav_cabs">Cabs</a>
+        <a href="restaurants.html" class="nav-link text-sm font-['Inter'] font-semibold text-[#191c1d] tracking-wider uppercase" data-i18n="nav_restaurants">Restaurants</a>
+        <a href="packages.html" class="nav-link text-sm font-['Inter'] font-semibold text-[#191c1d] tracking-wider uppercase" data-i18n="nav_packages">Packages</a>
+        <a href="blog.html" class="nav-link text-sm font-['Inter'] font-semibold text-[#191c1d] tracking-wider uppercase" data-i18n="nav_travel_guides">Travel Guides</a>
+        <a href="vendor-onboarding.html" class="nav-link text-sm font-['Inter'] font-semibold text-[#191c1d] tracking-wider uppercase" data-i18n="nav_list_property">List Your Property</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <button id="langToggle" onclick="toggleLang()" class="text-sm font-['Inter'] font-semibold text-[#012d1d] bg-[#c1ecd4] hover:bg-[#a5d0b9] px-3 py-1.5 rounded-full transition-all duration-300" data-i18n="lang_toggle">हिन्दी</button>
+        <a href="ai-planner.html" class="hidden sm:inline-flex btn-primary text-xs !px-4 !py-2.5 lg:!px-6 lg:!py-3">
+          <span data-i18n="nav_plan_trip">Plan My Trip</span>
+          <span class="material-symbols-outlined text-base leading-none">explore</span>
+        </a>
+        <button class="lg:hidden p-2 text-[#012d1d]" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">
+          <span class="material-symbols-outlined text-2xl">menu</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div id="mobileMenu" class="hidden lg:hidden border-t border-[#c1c8c2]/40 bg-white/95 backdrop-blur-md">
+    <div class="px-4 py-4 space-y-3">
+      <a href="index.html" class="block text-sm font-['Inter'] font-semibold text-[#191c1d] tracking-wider uppercase" data-i18n="nav_home">Home</a>
+      <a href="destinations.html" class="block text-sm font-['Inter'] font-semibold text-[#191c1d] tracking-wider uppercase" data-i18n="nav_destinations">Destinations</a>
+      <a href="hotels.html" class="block text-sm font-['Inter'] font-semibold text-[#191c1d] tracking-wider uppercase" data-i18n="nav_hotels">Hotels</a>
+      <a href="cab-booking.html" class="block text-sm font-['Inter'] font-semibold text-[#191c1d] tracking-wider uppercase" data-i18n="nav_cabs">Cabs</a>
+      <a href="restaurants.html" class="block text-sm font-['Inter'] font-semibold text-[#191c1d] tracking-wider uppercase" data-i18n="nav_restaurants">Restaurants</a>
+      <a href="packages.html" class="block text-sm font-['Inter'] font-semibold text-[#191c1d] tracking-wider uppercase" data-i18n="nav_packages">Packages</a>
+      <a href="blog.html" class="block text-sm font-['Inter'] font-semibold text-[#191c1d] tracking-wider uppercase" data-i18n="nav_travel_guides">Travel Guides</a>
+      <a href="vendor-onboarding.html" class="block text-sm font-['Inter'] font-semibold text-[#191c1d] tracking-wider uppercase" data-i18n="nav_list_property">List Your Property</a>
+      <a href="ai-planner.html" class="block text-sm font-['Inter'] font-semibold text-[#012d1d] bg-[#c1ecd4] px-4 py-2 rounded-lg text-center mt-2" data-i18n="nav_plan_trip">Plan My Trip</a>
+    </div>
+  </div>
+</nav>
+
+<section class="relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-16">
+  <div class="absolute inset-0 bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1920&q=80')"></div>
+  <div class="absolute inset-0 hero-gradient"></div>
+  <div class="relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-6 text-center pt-16 pb-16">
+    <div class="animate-fade-in">
+      <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-1.5 mb-6">
+        <span class="w-2 h-2 rounded-full bg-[#a5d0b9] animate-pulse"></span>
+        <span class="text-xs font-['Inter'] font-semibold text-[#c1ecd4] tracking-widest uppercase">AI Powered</span>
+      </div>
+      <h1 class="font-['Montserrat'] text-display-lg-mobile lg:text-display-lg text-white leading-tight mb-5 text-balance" data-i18n="ai_hero_title">AI Travel Planner</h1>
+      <p class="text-base sm:text-lg text-white/80 max-w-2xl mx-auto font-['Outfit'] leading-relaxed" data-i18n="ai_hero_sub">Describe your ideal trip and we'll build a custom itinerary</p>
+    </div>
+  </div>
+  <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#f8f9fa] to-transparent pointer-events-none"></div>
+</section>
+
+<section class="py-16 bg-white">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="animate-fade-in">
+      <div class="bg-[#f8f9fa] rounded-3xl border border-[#e1e3e4] p-6 lg:p-10 shadow-sm">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-10 h-10 rounded-xl bg-[#012d1d] flex items-center justify-center">
+            <span class="material-symbols-outlined text-white text-xl">auto_awesome</span>
+          </div>
+          <div>
+            <h2 class="font-['Montserrat'] font-semibold text-xl text-[#012d1d]" data-i18n="ai_prompt_label">Describe Your Ideal Trip</h2>
+            <p class="text-xs text-[#717973] font-['Inter']">Powered by intelligent itinerary builder</p>
+          </div>
+        </div>
+        <textarea id="aiPrompt" rows="5" class="form-input text-base resize-none mb-5" data-i18n="ai_prompt_placeholder" placeholder="Tell us about your trip â€” destinations, budget, duration, preferences...">I'm coming with family from Ranchi. Budget â‚¹20,000. Need 3 days. Want waterfalls and peaceful stay.</textarea>
+        <div class="mb-6">
+          <p class="text-xs font-['Inter'] font-semibold text-[#717973] uppercase tracking-wider mb-3">Quick Preferences</p>
+          <div class="flex flex-wrap gap-2">
+            <button class="chip-btn px-4 py-2 rounded-full text-sm font-['Inter'] font-semibold border border-[#c1c8c2] bg-white text-[#414844] hover:border-[#012d1d] hover:text-[#012d1d]" data-i18n="ai_chip_budget">Budget</button>
+            <button class="chip-btn px-4 py-2 rounded-full text-sm font-['Inter'] font-semibold border border-[#c1c8c2] bg-white text-[#414844] hover:border-[#012d1d] hover:text-[#012d1d]" data-i18n="ai_chip_family">Family</button>
+            <button class="chip-btn px-4 py-2 rounded-full text-sm font-['Inter'] font-semibold border border-[#c1c8c2] bg-white text-[#414844] hover:border-[#012d1d] hover:text-[#012d1d]" data-i18n="ai_chip_adventure">Adventure</button>
+            <button class="chip-btn px-4 py-2 rounded-full text-sm font-['Inter'] font-semibold border border-[#c1c8c2] bg-white text-[#414844] hover:border-[#012d1d] hover:text-[#012d1d]" data-i18n="ai_chip_pilgrimage">Pilgrimage</button>
+            <button class="chip-btn px-4 py-2 rounded-full text-sm font-['Inter'] font-semibold border border-[#c1c8c2] bg-white text-[#414844] hover:border-[#012d1d] hover:text-[#012d1d]" data-i18n="ai_chip_weekend">Weekend</button>
+            <button class="chip-btn px-4 py-2 rounded-full text-sm font-['Inter'] font-semibold border border-[#c1c8c2] bg-white text-[#414844] hover:border-[#012d1d] hover:text-[#012d1d]" data-i18n="ai_chip_wildlife">Wildlife</button>
+          </div>
+        </div>
+        <button onclick="generateItinerary()" class="btn-primary w-full justify-center !py-4 text-base">
+          <span class="material-symbols-outlined text-xl">auto_awesome</span>
+          <span data-i18n="ai_btn">Build My Itinerary</span>
+        </button>
+        <div class="mt-4 flex items-center gap-2 text-xs text-[#717973] justify-center">
+          <span class="material-symbols-outlined text-base">shield</span>
+          <span>Your preferences are private and not stored</span>
+        </div>
+      </div>
+    </div>
+
+    <div id="itineraryOutput" class="hidden mt-10 animate-fade-in">
+      <div class="bg-gradient-to-br from-[#012d1d] to-[#1b4332] rounded-3xl p-6 lg:p-10 text-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-[#a5d0b9]/5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-48 h-48 bg-[#c1ecd4]/5 rounded-full translate-y-1/2 -translate-x-1/2"></div>
+        <div class="relative z-10">
+          <div class="flex items-center gap-3 mb-8">
+            <div class="w-10 h-10 rounded-xl bg-[#a5d0b9]/20 flex items-center justify-center">
+              <span class="material-symbols-outlined text-[#a5d0b9] text-xl">checklist</span>
+            </div>
+            <div>
+              <h3 class="font-['Montserrat'] font-semibold text-xl" data-i18n="ai_output_title">Your Personalized Itinerary</h3>
+              <p class="text-xs text-[#a5d0b9]">Generated based on your preferences</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 gap-6 mb-8">
+            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-5 border border-white/10">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="w-8 h-8 rounded-full bg-[#a5d0b9]/30 flex items-center justify-center text-sm font-bold text-[#a5d0b9]">1</span>
+                <h4 class="font-['Montserrat'] font-semibold text-white" data-i18n="ai_output_day1_title">Day 1 â€” Arrival & Exploration</h4>
+              </div>
+              <p class="text-sm text-white/80 leading-relaxed" data-i18n="ai_output_day1">Arrive in Ranchi â†’ Visit Hundru Falls â†’ Drive to Netarhat (evening) â†’ Sunset at Magnolia Point</p>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-5 border border-white/10">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="w-8 h-8 rounded-full bg-[#a5d0b9]/30 flex items-center justify-center text-sm font-bold text-[#a5d0b9]">2</span>
+                <h4 class="font-['Montserrat'] font-semibold text-white" data-i18n="ai_output_day2_title">Day 2 â€” Sunrise & Departure</h4>
+              </div>
+              <p class="text-sm text-white/80 leading-relaxed" data-i18n="ai_output_day2">Sunrise at Netarhat â†’ Breakfast â†’ Lower Ghaghri Falls trek â†’ Return to Ranchi</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-5 border border-white/10">
+              <span class="material-symbols-outlined text-[#a5d0b9] text-xl mb-2">hotel</span>
+              <p class="text-sm text-white/80" data-i18n="ai_output_hotel">Hotel: Netarhat Forest Retreat â€” â‚¹6,500/night</p>
+              <a href="hotels.html" class="inline-flex items-center gap-1 text-xs text-[#a5d0b9] hover:text-[#c1ecd4] font-['Inter'] font-semibold mt-2 transition-colors">
+                <span data-i18n="ai_output_book_hotel">Book This Hotel</span>
+                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+              </a>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-5 border border-white/10">
+              <span class="material-symbols-outlined text-[#a5d0b9] text-xl mb-2">directions_car</span>
+              <p class="text-sm text-white/80" data-i18n="ai_output_cab">Cab: Ranchi to Netarhat Round Trip â€” â‚¹4,800</p>
+              <a href="cab-booking.html" class="inline-flex items-center gap-1 text-xs text-[#a5d0b9] hover:text-[#c1ecd4] font-['Inter'] font-semibold mt-2 transition-colors">
+                <span data-i18n="ai_output_book_cab">Book This Cab</span>
+                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+              </a>
+            </div>
+          </div>
+          <div class="bg-[#a5d0b9]/10 rounded-2xl p-5 border border-[#a5d0b9]/20 flex items-center justify-between">
+            <div>
+              <p class="text-xs text-[#a5d0b9] font-['Inter'] font-semibold uppercase tracking-wider" data-i18n="ai_output_total">Total Estimated Budget</p>
+              <p class="font-['Montserrat'] font-bold text-2xl text-white">â‚¹18,300</p>
+            </div>
+            <a href="https://wa.me/919876543210" target="_blank" class="bg-[#25D366] text-white px-5 py-2.5 rounded-xl text-sm font-['Inter'] font-semibold hover:bg-[#20bd5a] transition-all flex items-center gap-2">
+              <span class="material-symbols-outlined text-base">chat</span>
+              <span data-i18n="whatsapp_btn">Get WhatsApp Confirmation</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-16 animate-fade-in delay-3">
+      <div class="text-center mb-12">
+        <p class="text-sm font-['Inter'] font-semibold text-[#1b4332] tracking-widest uppercase mb-3" data-i18n="ai_how_title">How It Works</p>
+        <h2 class="font-['Montserrat'] text-headline-sm sm:text-headline-lg text-[#012d1d]">Your AI Travel Companion</h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="text-center">
+          <div class="w-16 h-16 bg-[#c1ecd4]/30 rounded-2xl flex items-center justify-center mx-auto mb-5">
+            <span class="material-symbols-outlined text-3xl text-[#012d1d]">edit_note</span>
+          </div>
+          <div class="w-10 h-10 rounded-full bg-[#012d1d] text-white text-sm font-bold flex items-center justify-center mx-auto mb-4 -mt-2">1</div>
+          <h3 class="font-['Montserrat'] font-semibold text-lg text-[#012d1d] mb-2" data-i18n="ai_step1">Tell us your preferences</h3>
+          <p class="text-sm text-[#414844] leading-relaxed" data-i18n="ai_step1_desc">Describe your ideal trip â€” destinations, budget, group size, and interests</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 bg-[#c1ecd4]/30 rounded-2xl flex items-center justify-center mx-auto mb-5">
+            <span class="material-symbols-outlined text-3xl text-[#012d1d]">auto_awesome</span>
+          </div>
+          <div class="w-10 h-10 rounded-full bg-[#012d1d] text-white text-sm font-bold flex items-center justify-center mx-auto mb-4 -mt-2">2</div>
+          <h3 class="font-['Montserrat'] font-semibold text-lg text-[#012d1d] mb-2" data-i18n="ai_step2">AI builds your itinerary</h3>
+          <p class="text-sm text-[#414844] leading-relaxed" data-i18n="ai_step2_desc">Our AI creates a personalized day-by-day plan with hotel and cab recommendations</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 bg-[#c1ecd4]/30 rounded-2xl flex items-center justify-center mx-auto mb-5">
+            <span class="material-symbols-outlined text-3xl text-[#012d1d]">book_online</span>
+          </div>
+          <div class="w-10 h-10 rounded-full bg-[#012d1d] text-white text-sm font-bold flex items-center justify-center mx-auto mb-4 -mt-2">3</div>
+          <h3 class="font-['Montserrat'] font-semibold text-lg text-[#012d1d] mb-2" data-i18n="ai_step3">Book everything</h3>
+          <p class="text-sm text-[#414844] leading-relaxed" data-i18n="ai_step3_desc">Review and book your selected hotel and cab with one click</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-[#012d1d] text-white pt-16 pb-8">
+  <div class="w-full px-5">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+      <div>
+        <img src="logo.png" alt="Booking Jharkhand" class="h-10 w-auto mb-4 brightness-0 invert" />
+        <p class="text-sm text-[#a5d0b9] leading-relaxed" data-i18n="footer_tagline">Promoting sustainable and experiential tourism in the heart of India's forest land.</p>
+        <div class="flex gap-3 mt-5">
+          <a href="#" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-all">
+            <span class="material-symbols-outlined text-base">call</span>
+          </a>
+          <a href="#" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-all">
+            <span class="material-symbols-outlined text-base">mail</span>
+          </a>
+          <a href="#" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-all">
+            <span class="material-symbols-outlined text-base">language</span>
+          </a>
+          <a href="#" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-all">
+            <span class="material-symbols-outlined text-base">smart_display</span>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4 class="font-['Inter'] font-semibold text-sm tracking-widest uppercase text-[#a5d0b9] mb-5" data-i18n="footer_platform">Platform</h4>
+        <ul class="space-y-3">
+          <li><a href="about.html" class="text-sm text-white/70 hover:text-[#a5d0b9] transition-colors" data-i18n="footer_about">About Us</a></li>
+          <li><a href="contact.html" class="text-sm text-white/70 hover:text-[#a5d0b9] transition-colors" data-i18n="footer_contact">Contact</a></li>
+          <li><a href="#" class="text-sm text-white/70 hover:text-[#a5d0b9] transition-colors" data-i18n="footer_privacy">Privacy Policy</a></li>
+          <li><a href="#" class="text-sm text-white/70 hover:text-[#a5d0b9] transition-colors" data-i18n="footer_terms">Terms of Service</a></li>
+          <li><a href="#" class="text-sm text-white/70 hover:text-[#a5d0b9] transition-colors" data-i18n="footer_cancellation">Cancellation Policy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-['Inter'] font-semibold text-sm tracking-widest uppercase text-[#a5d0b9] mb-5" data-i18n="footer_support">Support</h4>
+        <ul class="space-y-3">
+          <li><a href="faq.html" class="text-sm text-white/70 hover:text-[#a5d0b9] transition-colors" data-i18n="footer_faq">FAQ</a></li>
+          <li><a href="vendor-onboarding.html" class="text-sm text-white/70 hover:text-[#a5d0b9] transition-colors" data-i18n="footer_partner">Partner With Us</a></li>
+          <li><a href="contact.html" class="text-sm text-white/70 hover:text-[#a5d0b9] transition-colors" data-i18n="footer_contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-['Inter'] font-semibold text-sm tracking-widest uppercase text-[#a5d0b9] mb-5" data-i18n="footer_connect">Connect</h4>
+        <ul class="space-y-3">
+          <li><a href="tel:+919876543210" class="text-sm text-white/70 hover:text-[#a5d0b9] transition-colors flex items-center gap-2"><span class="material-symbols-outlined text-base">call</span> +91 9876543210</a></li>
+          <li><a href="mailto:hello@discoverjharkhand.com" class="text-sm text-white/70 hover:text-[#a5d0b9] transition-colors flex items-center gap-2"><span class="material-symbols-outlined text-base">mail</span> hello@discoverjharkhand.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-white/10 pt-6 text-center">
+      <p class="text-xs text-white/50" data-i18n="footer_rights">Â© 2025 Booking Jharkhand. Govt. Recognized Tourism Partner.</p>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/919876543210" target="_blank" rel="noopener" class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-[#25D366] shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 flex items-center justify-center">
+  <span class="material-symbols-outlined text-white text-2xl">chat</span>
+</a>
+
+<script>
+function generateItinerary() {
+  var output = document.getElementById('itineraryOutput');
+  output.classList.remove('hidden');
+  output.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  document.querySelectorAll('.chip-btn').forEach(function(btn) {
+    btn.classList.add('active');
+  });
+}
+
+document.querySelectorAll('.chip-btn').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    this.classList.toggle('active');
+  });
+});
+
+document.addEventListener('DOMContentLoaded', applyLang);
+</script>
+</body>
+</html>
