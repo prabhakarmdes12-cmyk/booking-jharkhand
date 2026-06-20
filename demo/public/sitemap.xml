@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://booking-jharkhand.vercel.app/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://booking-jharkhand.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://booking-jharkhand.vercel.app/"/>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://booking-jharkhand.vercel.app/destinations.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://booking-jharkhand.vercel.app/destinations.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://booking-jharkhand.vercel.app/destinations.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://booking-jharkhand.vercel.app/hotels.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://booking-jharkhand.vercel.app/hotels.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://booking-jharkhand.vercel.app/hotels.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://booking-jharkhand.vercel.app/cab-booking.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://booking-jharkhand.vercel.app/cab-booking.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://booking-jharkhand.vercel.app/cab-booking.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://booking-jharkhand.vercel.app/restaurants.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://booking-jharkhand.vercel.app/restaurants.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://booking-jharkhand.vercel.app/restaurants.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://booking-jharkhand.vercel.app/packages.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://booking-jharkhand.vercel.app/packages.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://booking-jharkhand.vercel.app/packages.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://booking-jharkhand.vercel.app/blog.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://booking-jharkhand.vercel.app/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://booking-jharkhand.vercel.app/blog.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://booking-jharkhand.vercel.app/netarhat.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://booking-jharkhand.vercel.app/netarhat.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://booking-jharkhand.vercel.app/netarhat.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://booking-jharkhand.vercel.app/hotel-netarhat.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://booking-jharkhand.vercel.app/hotel-netarhat.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://booking-jharkhand.vercel.app/hotel-netarhat.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://booking-jharkhand.vercel.app/faq.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://booking-jharkhand.vercel.app/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://booking-jharkhand.vercel.app/faq.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://booking-jharkhand.vercel.app/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://booking-jharkhand.vercel.app/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://booking-jharkhand.vercel.app/contact.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://booking-jharkhand.vercel.app/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://booking-jharkhand.vercel.app/about.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://booking-jharkhand.vercel.app/about.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://booking-jharkhand.vercel.app/ai-planner.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://booking-jharkhand.vercel.app/ai-planner.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://booking-jharkhand.vercel.app/ai-planner.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://booking-jharkhand.vercel.app/vendor-onboarding.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://booking-jharkhand.vercel.app/vendor-onboarding.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://booking-jharkhand.vercel.app/vendor-onboarding.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+</urlset>

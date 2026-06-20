@@ -2,9 +2,30 @@
 <html class="scroll-smooth" lang="en">
 <head>
 <meta charset="utf-8"/>
+    <title>Admin Dashboard — Booking Jharkhand</title>
+    <meta name="description" content="Booking Jharkhand operations dashboard for managing vendors, enquiries, listings, and platform settings." />
+    <meta name="keywords" content="" />
+    <link rel="canonical" href="https://booking-jharkhand.vercel.app/admin.html" />
+    <link rel="alternate" hreflang="en" href="https://booking-jharkhand.vercel.app/admin.html" />
+    <link rel="alternate" hreflang="hi" href="https://booking-jharkhand.vercel.app/admin.html" />
+    <link rel="alternate" hreflang="x-default" href="https://booking-jharkhand.vercel.app/admin.html" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Admin Dashboard — Booking Jharkhand" />
+    <meta property="og:description" content="Booking Jharkhand operations dashboard for managing vendors, enquiries, listings, and platform settings." />
+    <meta property="og:url" content="https://booking-jharkhand.vercel.app/admin.html" />
+    <meta property="og:image" content="https://booking-jharkhand.vercel.app/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_IN" />
+    <meta property="og:site_name" content="Booking Jharkhand" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Admin Dashboard — Booking Jharkhand" />
+    <meta name="twitter:description" content="Booking Jharkhand operations dashboard for managing vendors, enquiries, listings, and platform settings." />
+    <meta name="twitter:image" content="https://booking-jharkhand.vercel.app/og-image.jpg" />
 <link rel="icon" type="image/png" href="/favicon.png" />
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Admin Dashboard - Booking Jharkhand</title>
+
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Outfit:wght@300;400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
@@ -12,7 +33,7 @@
 .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
 .glass-card { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); }
 </style>
-<script src="i18n.js"></script>
+<script src="/i18n.js"></script>
 <script>
 tailwind.config = {
   darkMode: "class",
@@ -146,6 +167,67 @@ tailwind.config = {
 </div>
 </main>
 </div>
-<script>document.addEventListener('DOMContentLoaded', applyLang);</script>
-</body>
+<script>
+function getInitials(name) { return name.split(' ').map(function(w) { return w[0]; }).join('').substring(0, 2).toUpperCase(); }
+function statusBadge(status) {
+  var map = { new: 'bg-blue-100 text-blue-800', assigned: 'bg-amber-100 text-amber-800', in_discussion: 'bg-purple-100 text-purple-800', confirmed: 'bg-green-100 text-green-800', completed: 'bg-gray-100 text-gray-800', cancelled: 'bg-red-100 text-red-800', pending: 'bg-amber-100 text-amber-800', active: 'bg-green-100 text-green-800', suspended: 'bg-red-100 text-red-800' };
+  return map[status] || 'bg-gray-100 text-gray-800';
+}
+function timeAgo(dateStr) {
+  var diff = Date.now() - new Date(dateStr).getTime();
+  var mins = Math.floor(diff / 60000);
+  if (mins < 60) return mins + 'm ago';
+  var hrs = Math.floor(mins / 60);
+  if (hrs < 24) return hrs + 'h ago';
+  return Math.floor(hrs / 24) + 'd ago';
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  applyLang();
+
+  function loadDashboard() {
+    API.dashboard.stats().then(function(stats) {
+      var cards = document.querySelectorAll('.grid.grid-cols-1.md\\:grid-cols-4 > div');
+      if (cards.length >= 4 && stats) {
+        cards[0].querySelector('.font-headline-lg').textContent = stats.totalEnquiries;
+        cards[1].querySelector('.font-headline-lg').textContent = stats.pendingVendors.count;
+        cards[1].querySelector('span').textContent = 'Requires attention';
+        cards[2].querySelector('.font-headline-lg').textContent = stats.activeListings;
+        cards[3].querySelector('.font-headline-lg').textContent = '₹' + (stats.monthlyRevenue / 100000).toFixed(1) + 'L';
+      }
+    });
+
+    API.enquiries.list({ limit: 5 }).then(function(resp) {
+      var tbody = document.querySelector('.bg-white.rounded-xl.p-6.border table tbody');
+      if (tbody && resp.data) {
+        tbody.innerHTML = '';
+        resp.data.forEach(function(enq) {
+          var tr = document.createElement('tr');
+          tr.className = 'border-b border-outline-variant/50';
+          tr.innerHTML = '<td class="py-3 px-2"><p class="font-body-md">' + enq.customerName + '</p></td><td class="py-3 px-2 text-caption">' + enq.customerPhone + '</td><td class="py-3 px-2 text-caption">' + (enq.listingName || enq.type) + '</td><td class="py-3 px-2 text-caption">' + timeAgo(enq.createdAt) + '</td><td class="py-3 px-2"><span class="' + statusBadge(enq.status) + ' px-3 py-1 rounded-full text-[10px] font-bold uppercase">' + enq.status.replace('_', ' ') + '</span></td>';
+          tbody.appendChild(tr);
+        });
+      }
+    });
+
+    API.vendors.list({ status: 'pending' }).then(function(resp) {
+      var container = document.querySelector('.bg-white.rounded-xl.p-6.border.border-surface-variant:last-child .space-y-4');
+      if (container && resp.data) {
+        container.innerHTML = '';
+        resp.data.forEach(function(v) {
+          var div = document.createElement('div');
+          div.className = 'flex items-center justify-between p-4 rounded-lg bg-surface-container-low border border-outline-variant';
+          div.innerHTML = '<div class="flex items-center gap-4"><span class="w-10 h-10 rounded-full bg-primary-fixed-dim flex items-center justify-center text-primary font-bold">' + getInitials(v.ownerName) + '</span><div><p class="font-label-md">' + v.ownerName + '</p><p class="text-caption text-on-surface-variant">' + v.businessName + ' · ' + v.district + '</p></div></div><div class="flex gap-2"><button class="bg-primary text-on-primary px-4 py-1.5 rounded-full text-[12px] font-label-md" onclick="API.vendors.approve(\'' + v.id + '\').then(function(){ location.reload(); })">Approve</button><button class="border border-outline text-outline px-4 py-1.5 rounded-full text-[12px] font-label-md" onclick="API.vendors.reject(\'' + v.id + '\',\'Declined by admin\').then(function(){ location.reload(); })">Reject</button></div>';
+          container.appendChild(div);
+        });
+      }
+    });
+  }
+
+  loadDashboard();
+  setInterval(loadDashboard, 30000);
+});
+</script>
+  <script src="/seo.js"></script>
+  <script src="/api.js"></script></body>
 </html>

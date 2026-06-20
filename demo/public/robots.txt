@@ -1,0 +1,9 @@
+# Booking Jharkhand — robots.txt
+User-agent: *
+Allow: /
+Disallow: /admin.html
+Disallow: /cab-dashboard.html
+Disallow: /hotel-dashboard.html
+Disallow: /restaurant-portal.html
+
+Sitemap: https://booking-jharkhand.vercel.app/sitemap.xml
