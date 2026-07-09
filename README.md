@@ -307,6 +307,49 @@ API.auth.isAuthenticated()            // → boolean
 | `dashboard` | `stats`, `reports` | Analytics |
 | `contact` | `submit` | Contact form |
 
+### Forest Haven Hotel Flow
+
+Forest Haven Retreat is the current end-to-end hotel integration test property.
+
+Live pages:
+
+- Hotel detail: `https://booking-jharkhand-beta.vercel.app/hotel-forest-haven.html`
+- Booking status/voucher: `https://booking-jharkhand-beta.vercel.app/booking-status.html?id=<bookingId>`
+- Console backend: `https://chiti-console.vercel.app/api`
+
+Public API endpoints used by the page:
+
+| Endpoint | Purpose |
+|---|---|
+| `GET /api/public/availability?checkIn=<date>&checkOut=<date>&guests=<n>` | Fetch available room inventory |
+| `POST /api/public/book` | Create a 15-minute `PENDING` hotel hold |
+| `GET /api/public/bookings/<bookingId>` | Fetch customer-safe booking status/voucher data |
+
+Customer flow:
+
+1. Open `hotel-forest-haven.html`.
+2. Select check-in, check-out, and guests.
+3. Click Check Rooms.
+4. Select a room and submit guest details.
+5. The page creates a 15-minute hold in Chiti Console and shows a status/voucher link.
+6. Open the status link to track `PENDING`, `CONFIRMED`, `CHECKED_IN`, `CHECKED_OUT`, or `CANCELLED`.
+
+Hotel owner/admin flow in Chiti Console:
+
+1. Open `/hotel/bookings`.
+2. Find the new `PENDING` hold.
+3. Click Confirm Cash after offline payment/call confirmation.
+4. Use Check In on arrival and Check Out on departure.
+
+Vendor flow:
+
+1. Open `/vendor-portal/login`.
+2. Login with the registered hotel phone.
+3. Open `/vendor/bookings`.
+4. Confirm cash, reject/cancel, check in, or check out bookings from the vendor booking list.
+
+Production smoke test completed on 2026-07-09 with booking ID `72dcf344-8104-448c-aebf-5eddd3f61604`.
+
 ### Error Handling
 
 All methods return Promises. On API failure, methods fall back to built-in mock data for development/demo scenarios. Errors include `message` and `status` properties.

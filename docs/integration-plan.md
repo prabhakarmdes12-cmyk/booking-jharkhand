@@ -542,12 +542,24 @@ The frontend (current static site) will fetch data from Chiti Console API.
 | `GET /api/promotions?active=true` | Active discount codes | GET | Returns valid promotions |
 | `POST /api/contact` | Contact form submission | POST | Creates support ticket |
 | `GET /api/destinations` | Fetch destination data | GET | Returns districts/attractions |
+| `GET /api/public/availability` | Forest Haven room availability | GET | Query `checkIn`, `checkOut`, `guests`; returns available room inventory |
+| `POST /api/public/book` | Forest Haven hold booking | POST | Creates 15-minute `PENDING` hotel hold and returns `statusPath` |
+| `GET /api/public/bookings/:id` | Customer booking status/voucher | GET | Returns limited booking, guest, room, status, and payment data |
 
 **Frontend Integration Plan:**
 1. Replace static HTML content with API-fetched dynamic content
 2. Form submissions POST to API instead of going nowhere
 3. Add JWT token management for authenticated users
 4. Implement lazy loading and caching for performance
+
+**Forest Haven live flow:**
+1. `hotel-forest-haven.html` calls `GET /api/public/availability` with the seeded project API key.
+2. Customer submits guest details; the page calls `POST /api/public/book`.
+3. Console creates a `PENDING` `HotelBooking` hold for 15 minutes.
+4. The response includes `/booking-status.html?id=<bookingId>`.
+5. `booking-status.html` calls `GET /api/public/bookings/:id` and renders the status/voucher.
+6. Hotel owner confirms offline payment from Chiti Console `/hotel/bookings`, or the vendor confirms from `/vendor/bookings`.
+7. Customer status page changes as the booking moves through `CONFIRMED`, `CHECKED_IN`, and `CHECKED_OUT`.
 
 ---
 
