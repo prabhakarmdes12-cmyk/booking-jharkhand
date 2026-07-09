@@ -4,3 +4,4 @@ dist/
 *.log
 .env
 /hero3.mp4
+.vercel
