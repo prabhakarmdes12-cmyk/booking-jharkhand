@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Booking Status | Booking Jharkhand</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { forest: "#064e3b", leaf: "#d1fae5", sand: "#fbbf24", moss: "#047857" },
+          fontFamily: { sans: ["Inter", "sans-serif"] }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-[#f8f9fa] text-[#17211b] font-sans">
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-[#e1e3e4]">
+    <div class="max-w-5xl mx-auto px-5 py-4 flex items-center justify-between">
+      <a href="hotels.html" class="flex items-center gap-3">
+        <img src="logo.png" alt="Booking Jharkhand" class="h-10 w-auto" />
+      </a>
+      <a href="hotel-forest-haven.html" class="text-sm font-semibold text-forest hover:text-moss">Back to hotel</a>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-5 py-10">
+    <div id="loading" class="rounded-3xl bg-white border border-[#e1e3e4] p-10 text-center shadow-sm">
+      <p class="text-sm text-[#717973]">Loading booking status...</p>
+    </div>
+
+    <div id="errorState" class="hidden rounded-3xl bg-white border border-red-200 p-10 text-center shadow-sm">
+      <p class="text-sm font-semibold text-red-700">Could not load booking</p>
+      <p id="errorMessage" class="mt-2 text-sm text-[#717973]"></p>
+      <a href="hotel-forest-haven.html" class="inline-flex mt-5 rounded-xl bg-forest px-5 py-3 text-sm font-bold text-white">Start again</a>
+    </div>
+
+    <section id="bookingCard" class="hidden space-y-5">
+      <div class="rounded-3xl bg-white border border-[#e1e3e4] shadow-sm overflow-hidden">
+        <div id="statusBand" class="px-6 py-5 bg-amber-50 border-b border-amber-100">
+          <p id="statusLabel" class="text-sm font-bold text-amber-800"></p>
+          <p id="statusHelp" class="mt-1 text-sm text-amber-700"></p>
+        </div>
+
+        <div class="p-6 md:p-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div class="lg:col-span-2 space-y-6">
+            <div>
+              <p class="text-xs uppercase tracking-wide font-bold text-[#717973]">Booking Reference</p>
+              <h1 id="bookingId" class="mt-1 text-2xl md:text-3xl font-extrabold text-forest break-all"></h1>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="rounded-2xl bg-[#f8f9fa] border border-[#e1e3e4] p-4">
+                <p class="text-xs font-bold uppercase text-[#717973]">Guest</p>
+                <p id="guestName" class="mt-1 font-bold text-forest"></p>
+                <p id="guestContact" class="text-sm text-[#717973]"></p>
+              </div>
+              <div class="rounded-2xl bg-[#f8f9fa] border border-[#e1e3e4] p-4">
+                <p class="text-xs font-bold uppercase text-[#717973]">Room</p>
+                <p id="roomName" class="mt-1 font-bold text-forest"></p>
+                <p id="roomMeta" class="text-sm text-[#717973]"></p>
+              </div>
+              <div class="rounded-2xl bg-[#f8f9fa] border border-[#e1e3e4] p-4">
+                <p class="text-xs font-bold uppercase text-[#717973]">Dates</p>
+                <p id="dateRange" class="mt-1 font-bold text-forest"></p>
+                <p id="nightCount" class="text-sm text-[#717973]"></p>
+              </div>
+              <div class="rounded-2xl bg-[#f8f9fa] border border-[#e1e3e4] p-4">
+                <p class="text-xs font-bold uppercase text-[#717973]">Amount</p>
+                <p id="amount" class="mt-1 font-bold text-forest"></p>
+                <p id="payment" class="text-sm text-[#717973]"></p>
+              </div>
+            </div>
+
+            <div id="nextSteps" class="rounded-2xl bg-leaf border border-emerald-100 p-5">
+              <h2 class="font-bold text-forest">Next steps</h2>
+              <ul id="nextStepsList" class="mt-3 space-y-2 text-sm text-[#414844]"></ul>
+            </div>
+          </div>
+
+          <aside class="rounded-2xl bg-forest text-white p-5 h-fit">
+            <p class="text-xs uppercase tracking-wide text-leaf font-bold">Voucher</p>
+            <p class="mt-2 text-2xl font-extrabold">Forest Haven Retreat</p>
+            <div class="mt-5 space-y-3 text-sm">
+              <div class="flex justify-between gap-4"><span class="text-leaf">Status</span><span id="voucherStatus" class="font-bold text-right"></span></div>
+              <div class="flex justify-between gap-4"><span class="text-leaf">Guests</span><span id="voucherGuests" class="font-bold text-right"></span></div>
+              <div class="flex justify-between gap-4"><span class="text-leaf">Payment</span><span id="voucherPayment" class="font-bold text-right"></span></div>
+            </div>
+            <button onclick="window.print()" class="mt-6 w-full rounded-xl bg-sand py-3 text-sm font-bold text-[#322400]">Print / Save Voucher</button>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const API_BASE = "https://chiti-console.vercel.app/api";
+    const API_KEY = "forest-haven-api-key-chiti-console-2026";
+
+    function formatDate(value) {
+      return new Date(value).toLocaleDateString("en-IN", { day: "2-digit", month: "short", year: "numeric" });
+    }
+
+    function statusCopy(booking) {
+      if (booking.status === "PENDING") {
+        return {
+          band: "bg-amber-50 border-amber-100",
+          label: "Hold created - awaiting hotel confirmation",
+          help: booking.holdExpiresAt ? "This hold expires at " + new Date(booking.holdExpiresAt).toLocaleTimeString("en-IN", { hour: "2-digit", minute: "2-digit" }) + "." : "The hotel team will confirm this shortly.",
+          steps: ["Keep this reference number.", "Booking Jharkhand or the hotel owner will confirm payment/availability.", "Once confirmed, this page becomes your voucher."]
+        };
+      }
+      if (booking.status === "CONFIRMED") {
+        return {
+          band: "bg-emerald-50 border-emerald-100",
+          label: "Booking confirmed",
+          help: "Your stay is confirmed. Show this page or printed voucher at check-in.",
+          steps: ["Carry a government ID for all guests.", "Share this booking reference at reception.", "Pay any remaining charges directly as agreed."]
+        };
+      }
+      if (booking.status === "CHECKED_IN") {
+        return { band: "bg-blue-50 border-blue-100", label: "Guest checked in", help: "The stay is currently active.", steps: ["Contact reception for room service or checkout help."] };
+      }
+      if (booking.status === "CHECKED_OUT") {
+        return { band: "bg-slate-50 border-slate-100", label: "Stay completed", help: "Thank you for travelling with Booking Jharkhand.", steps: ["Save this page for your records."] };
+      }
+      return { band: "bg-red-50 border-red-100", label: "Booking not active", help: "This hold was cancelled or expired.", steps: ["Create a new hold if you still want to book this stay."] };
+    }
+
+    async function loadBooking() {
+      const id = new URLSearchParams(location.search).get("id");
+      if (!id) throw new Error("Missing booking reference.");
+
+      const response = await fetch(API_BASE + "/public/bookings/" + encodeURIComponent(id), {
+        headers: { "x-api-key": API_KEY }
+      });
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.error || "Could not load booking.");
+      return data.booking;
+    }
+
+    function render(booking) {
+      const copy = statusCopy(booking);
+      document.getElementById("statusBand").className = "px-6 py-5 border-b " + copy.band;
+      document.getElementById("statusLabel").textContent = copy.label;
+      document.getElementById("statusHelp").textContent = copy.help;
+      document.getElementById("bookingId").textContent = booking.id;
+      document.getElementById("guestName").textContent = booking.guest?.name || "Guest";
+      document.getElementById("guestContact").textContent = booking.guest?.phone || booking.guest?.email || "No contact provided";
+      document.getElementById("roomName").textContent = booking.room.name;
+      document.getElementById("roomMeta").textContent = booking.room.bedType + " - " + booking.room.type;
+      document.getElementById("dateRange").textContent = formatDate(booking.checkIn) + " to " + formatDate(booking.checkOut);
+      document.getElementById("nightCount").textContent = booking.nights + " night" + (booking.nights === 1 ? "" : "s") + " - " + booking.guests + " guest" + (booking.guests === 1 ? "" : "s");
+      document.getElementById("amount").textContent = "Rs " + booking.totalAmount.toLocaleString("en-IN");
+      document.getElementById("payment").textContent = booking.paymentStatus + (booking.paymentMethod ? " - " + booking.paymentMethod : "");
+      document.getElementById("voucherStatus").textContent = booking.status.replaceAll("_", " ");
+      document.getElementById("voucherGuests").textContent = String(booking.guests);
+      document.getElementById("voucherPayment").textContent = booking.paymentStatus;
+      document.getElementById("nextStepsList").innerHTML = copy.steps.map(function(step) { return "<li>" + step + "</li>"; }).join("");
+      document.getElementById("loading").classList.add("hidden");
+      document.getElementById("bookingCard").classList.remove("hidden");
+    }
+
+    loadBooking().then(render).catch(function(error) {
+      document.getElementById("loading").classList.add("hidden");
+      document.getElementById("errorMessage").textContent = error.message;
+      document.getElementById("errorState").classList.remove("hidden");
+    });
+  </script>
+</body>
+</html>

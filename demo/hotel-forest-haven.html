@@ -208,7 +208,7 @@
       const color = tone === "error" ? "#b91c1c" : tone === "success" ? "#15803d" : "#717973";
       [statusMessage, availabilityStatus].forEach(function(element) {
         if (!element) return;
-        element.textContent = text || "";
+        element.innerHTML = text || "";
         element.style.color = color;
       });
     }
@@ -308,8 +308,9 @@
         });
         const data = await response.json();
         if (!response.ok) throw new Error(data.error || "Could not create booking hold");
-        setMessage("Booking hold created. Reference: " + data.booking.id, "success");
-        await checkAvailability();
+          const statusPath = data.booking.statusPath || ("booking-status.html?id=" + encodeURIComponent(data.booking.id));
+          setMessage('Booking hold created. Reference: ' + data.booking.id + '<br><a class="font-bold underline" href="' + statusPath + '">View booking status and voucher</a>', "success");
+          await checkAvailability();
       } catch (error) {
         console.error("Booking hold failed", error);
         setMessage(error.message || "Could not create booking hold", "error");
