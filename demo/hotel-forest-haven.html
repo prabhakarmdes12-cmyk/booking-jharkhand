@@ -97,6 +97,7 @@
 
         <div>
           <h2 class="font-display text-2xl font-semibold text-forest mb-5">Rooms Available</h2>
+          <p id="availabilityStatus" class="mb-3 min-h-6 text-sm text-[#717973]"></p>
           <div id="roomList" class="space-y-4">
             <div class="rounded-2xl bg-white border border-[#e1e3e4] p-6 text-[#717973]">Choose dates to check live room availability.</div>
           </div>
@@ -195,13 +196,29 @@
   <script>
     const API_BASE = "https://chiti-console.vercel.app/api";
     const API_KEY = "forest-haven-api-key-chiti-console-2026";
+    document.addEventListener("DOMContentLoaded", function() {
     const roomList = document.getElementById("roomList");
     const roomSelect = document.getElementById("roomId");
     const statusMessage = document.getElementById("statusMessage");
+    const availabilityStatus = document.getElementById("availabilityStatus");
+    const checkBtn = document.getElementById("checkBtn");
+    const bookBtn = document.getElementById("bookBtn");
 
     function setMessage(text, tone) {
-      statusMessage.textContent = text || "";
-      statusMessage.className = "min-h-6 text-sm text-center " + (tone === "error" ? "text-red-700" : tone === "success" ? "text-green-700" : "text-[#717973]");
+      const color = tone === "error" ? "#b91c1c" : tone === "success" ? "#15803d" : "#717973";
+      [statusMessage, availabilityStatus].forEach(function(element) {
+        if (!element) return;
+        element.textContent = text || "";
+        element.style.color = color;
+      });
+    }
+
+    function setLoading(button, isLoading, loadingLabel) {
+      if (!button) return;
+      if (!button.dataset.label) button.dataset.label = button.textContent;
+      button.disabled = isLoading;
+      button.textContent = isLoading ? loadingLabel : button.dataset.label;
+      button.style.opacity = isLoading ? "0.7" : "1";
     }
 
     function getSearchValues() {
@@ -244,13 +261,21 @@
         return;
       }
 
+      setLoading(checkBtn, true, "Checking...");
       setMessage("Checking live room inventory...");
-      const url = API_BASE + "/public/availability?checkIn=" + encodeURIComponent(values.checkIn) + "&checkOut=" + encodeURIComponent(values.checkOut) + "&guests=" + encodeURIComponent(values.guests);
-      const response = await fetch(url, { headers: { "x-api-key": API_KEY } });
-      const data = await response.json();
-      if (!response.ok) throw new Error(data.error || "Could not check availability");
-      renderRooms(data.available || [], data.nights || 1);
-      setMessage((data.available || []).length + " room options available.", "success");
+      try {
+        const url = API_BASE + "/public/availability?checkIn=" + encodeURIComponent(values.checkIn) + "&checkOut=" + encodeURIComponent(values.checkOut) + "&guests=" + encodeURIComponent(values.guests);
+        const response = await fetch(url, { headers: { "x-api-key": API_KEY } });
+        const data = await response.json();
+        if (!response.ok) throw new Error(data.error || "Could not check availability");
+        renderRooms(data.available || [], data.nights || 1);
+        setMessage((data.available || []).length + " room options available.", "success");
+      } catch (error) {
+        console.error("Availability check failed", error);
+        setMessage(error.message || "Could not check availability", "error");
+      } finally {
+        setLoading(checkBtn, false);
+      }
     }
 
     async function holdBooking(event) {
@@ -273,16 +298,24 @@
         return;
       }
 
+      setLoading(bookBtn, true, "Holding...");
       setMessage("Creating your 15-minute booking hold...");
-      const response = await fetch(API_BASE + "/public/book", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", "x-api-key": API_KEY },
-        body: JSON.stringify(body)
-      });
-      const data = await response.json();
-      if (!response.ok) throw new Error(data.error || "Could not create booking hold");
-      setMessage("Booking hold created. Reference: " + data.booking.id, "success");
-      await checkAvailability();
+      try {
+        const response = await fetch(API_BASE + "/public/book", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "x-api-key": API_KEY },
+          body: JSON.stringify(body)
+        });
+        const data = await response.json();
+        if (!response.ok) throw new Error(data.error || "Could not create booking hold");
+        setMessage("Booking hold created. Reference: " + data.booking.id, "success");
+        await checkAvailability();
+      } catch (error) {
+        console.error("Booking hold failed", error);
+        setMessage(error.message || "Could not create booking hold", "error");
+      } finally {
+        setLoading(bookBtn, false);
+      }
     }
 
     document.getElementById("checkBtn").addEventListener("click", function() {
@@ -298,6 +331,7 @@
     document.getElementById("checkIn").value = start.toISOString().slice(0, 10);
     document.getElementById("checkOut").value = end.toISOString().slice(0, 10);
     checkAvailability().catch(function(error) { setMessage(error.message, "error"); });
+    });
   </script>
   <script src="/seo.js"></script>
   <script src="/chat-widget.js"></script>
