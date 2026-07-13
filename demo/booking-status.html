@@ -77,6 +77,40 @@
               </div>
             </div>
 
+            <div id="paymentPlanCard" class="rounded-2xl bg-[#fffaf0] border border-amber-100 p-5">
+              <h2 id="paymentPlanTitle" class="font-bold text-forest">Payment plan</h2>
+              <div class="mt-3 grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
+                <div>
+                  <p class="text-xs font-bold uppercase text-[#717973]">Pay now</p>
+                  <p id="payableNow" class="mt-1 font-bold text-forest"></p>
+                </div>
+                <div>
+                  <p class="text-xs font-bold uppercase text-[#717973]">Pay at hotel</p>
+                  <p id="payAtHotel" class="mt-1 font-bold text-forest"></p>
+                </div>
+                <div>
+                  <p class="text-xs font-bold uppercase text-[#717973]">Mode</p>
+                  <p id="paymentMode" class="mt-1 font-bold text-forest"></p>
+                </div>
+              </div>
+              <p id="paymentInstructions" class="mt-3 text-sm text-[#414844]"></p>
+            </div>
+
+            <div id="hotelPolicyCard" class="rounded-2xl bg-[#f8f9fa] border border-[#e1e3e4] p-5">
+              <h2 class="font-bold text-forest">Hotel policy</h2>
+              <div class="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+                <div>
+                  <p class="text-xs font-bold uppercase text-[#717973]">Check-in</p>
+                  <p id="checkInTime" class="mt-1 font-bold text-forest"></p>
+                </div>
+                <div>
+                  <p class="text-xs font-bold uppercase text-[#717973]">Check-out</p>
+                  <p id="checkOutTime" class="mt-1 font-bold text-forest"></p>
+                </div>
+              </div>
+              <p id="cancellationPolicy" class="mt-3 text-sm text-[#414844]"></p>
+            </div>
+
             <div id="nextSteps" class="rounded-2xl bg-leaf border border-emerald-100 p-5">
               <h2 class="font-bold text-forest">Next steps</h2>
               <ul id="nextStepsList" class="mt-3 space-y-2 text-sm text-[#414844]"></ul>
@@ -106,13 +140,41 @@
       return new Date(value).toLocaleDateString("en-IN", { day: "2-digit", month: "short", year: "numeric" });
     }
 
+    function formatMode(value) {
+      return String(value || "").replaceAll("_", " ");
+    }
+
+    function formatMoney(value) {
+      return "Rs " + Number(value || 0).toLocaleString("en-IN");
+    }
+
     function statusCopy(booking) {
+      const plan = booking.paymentPlan || {};
+      const isManual = Boolean(booking.requiresManualConfirmation);
+      const payableNow = Number(plan.payableNow || 0);
+
       if (booking.status === "PENDING") {
+        if (isManual) {
+          return {
+            band: "bg-amber-50 border-amber-100",
+            label: "Booking request received - hotel confirmation pending",
+            help: booking.holdExpiresAt ? "The hotel team must verify live inventory before this hold expires at " + new Date(booking.holdExpiresAt).toLocaleTimeString("en-IN", { hour: "2-digit", minute: "2-digit" }) + "." : "The hotel team must verify live inventory before final confirmation.",
+            steps: ["Keep this reference number.", "Booking Jharkhand will confirm availability with the hotel.", "Do not make payment until the hotel confirms the room.", "After confirmation, this page becomes your stay voucher."]
+          };
+        }
+        if (payableNow > 0) {
+          return {
+            band: "bg-amber-50 border-amber-100",
+            label: "Room held - payment step pending",
+            help: booking.holdExpiresAt ? "Complete the payment step before " + new Date(booking.holdExpiresAt).toLocaleTimeString("en-IN", { hour: "2-digit", minute: "2-digit" }) + " to secure this room." : "Complete the payment step to secure this room.",
+            steps: ["Keep this reference number.", "Pay " + formatMoney(payableNow) + " as per the instructions below.", "Booking Jharkhand or the hotel will confirm payment.", "Once confirmed, this page becomes your voucher."]
+          };
+        }
         return {
           band: "bg-amber-50 border-amber-100",
-          label: "Hold created - awaiting hotel confirmation",
+          label: "Room held - confirmation pending",
           help: booking.holdExpiresAt ? "This hold expires at " + new Date(booking.holdExpiresAt).toLocaleTimeString("en-IN", { hour: "2-digit", minute: "2-digit" }) + "." : "The hotel team will confirm this shortly.",
-          steps: ["Keep this reference number.", "Booking Jharkhand or the hotel owner will confirm payment/availability.", "Once confirmed, this page becomes your voucher."]
+          steps: ["Keep this reference number.", "Booking Jharkhand or the hotel owner will confirm this booking.", "Once confirmed, this page becomes your voucher."]
         };
       }
       if (booking.status === "CONFIRMED") {
@@ -158,10 +220,24 @@
       document.getElementById("nightCount").textContent = booking.nights + " night" + (booking.nights === 1 ? "" : "s") + " - " + booking.guests + " guest" + (booking.guests === 1 ? "" : "s");
       document.getElementById("amount").textContent = "Rs " + booking.totalAmount.toLocaleString("en-IN");
       document.getElementById("payment").textContent = booking.paymentStatus + (booking.paymentMethod ? " - " + booking.paymentMethod : "");
+      const plan = booking.paymentPlan || {};
+      document.getElementById("payableNow").textContent = formatMoney(plan.payableNow || 0);
+      document.getElementById("payAtHotel").textContent = formatMoney(plan.payAtHotelAmount || 0);
+      document.getElementById("paymentMode").textContent = formatMode(plan.mode || "MANUAL_UPI");
+      document.getElementById("paymentInstructions").textContent = plan.instructions || "The hotel team will share payment instructions after confirmation.";
+      document.getElementById("checkInTime").textContent = booking.hotelPolicy?.checkInTime || "14:00";
+      document.getElementById("checkOutTime").textContent = booking.hotelPolicy?.checkOutTime || "11:00";
+      document.getElementById("cancellationPolicy").textContent = booking.hotelPolicy?.cancellationPolicy || "Cancellation terms will be confirmed by the hotel team.";
       document.getElementById("voucherStatus").textContent = booking.status.replaceAll("_", " ");
       document.getElementById("voucherGuests").textContent = String(booking.guests);
       document.getElementById("voucherPayment").textContent = booking.paymentStatus;
-      document.getElementById("nextStepsList").innerHTML = copy.steps.map(function(step) { return "<li>" + step + "</li>"; }).join("");
+      const nextStepsList = document.getElementById("nextStepsList");
+      nextStepsList.innerHTML = "";
+      copy.steps.forEach(function(step) {
+        const item = document.createElement("li");
+        item.textContent = step;
+        nextStepsList.appendChild(item);
+      });
       document.getElementById("loading").classList.add("hidden");
       document.getElementById("bookingCard").classList.remove("hidden");
     }

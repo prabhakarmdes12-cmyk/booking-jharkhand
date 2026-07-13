@@ -171,7 +171,7 @@
             </div>
             <button id="bookBtn" type="submit" class="w-full rounded-xl bg-sand py-4 text-sm font-label font-bold uppercase tracking-wide text-[#322400] hover:brightness-105">Hold Booking</button>
             <p id="statusMessage" class="min-h-6 text-sm text-center text-[#717973]"></p>
-            <p class="text-xs text-center text-[#717973]">You will not be charged now. This creates a 15-minute hold in Chiti Console.</p>
+            <p class="text-xs text-center text-[#717973]">Booking and payment instructions will appear after the hotel hold is created.</p>
           </form>
         </div>
       </aside>
@@ -219,6 +219,36 @@
       button.disabled = isLoading;
       button.textContent = isLoading ? loadingLabel : button.dataset.label;
       button.style.opacity = isLoading ? "0.7" : "1";
+    }
+
+    function bookingModeMessage(data) {
+      const mode = data.bookingMode || {};
+      const payment = String(mode.paymentMode || "").replaceAll("_", " ");
+      if (mode.requiresManualConfirmation) {
+        return "Live inventory needs hotel confirmation before final booking. Payment mode: " + payment + ".";
+      }
+      if (mode.partialAdvanceEnabled && mode.advancePercent) {
+        return "Rooms are available. " + mode.advancePercent + "% advance may be needed to secure booking.";
+      }
+      if (mode.paymentInstructions) return mode.paymentInstructions;
+      return "";
+    }
+
+    function bookingSuccessMessage(data, statusPath) {
+      const booking = data.booking || {};
+      const plan = booking.paymentPlan || {};
+      const payableNow = Number(plan.payableNow || 0);
+      let line = data.message || "Booking request received.";
+
+      if (booking.requiresManualConfirmation) {
+        line = "Booking request received. The hotel will verify room availability before final confirmation.";
+      } else if (payableNow > 0) {
+        line = "Room held. Pay Rs " + payableNow.toLocaleString("en-IN") + " now to secure the booking.";
+      } else if (plan.instructions) {
+        line = plan.instructions;
+      }
+
+      return line + '<br>Reference: ' + booking.id + '<br><a class="font-bold underline" href="' + statusPath + '">View booking status and voucher</a>';
     }
 
     function getSearchValues() {
@@ -269,7 +299,8 @@
         const data = await response.json();
         if (!response.ok) throw new Error(data.error || "Could not check availability");
         renderRooms(data.available || [], data.nights || 1);
-        setMessage((data.available || []).length + " room options available.", "success");
+        const modeCopy = bookingModeMessage(data);
+        setMessage((data.available || []).length + " room options available." + (modeCopy ? "<br>" + modeCopy : ""), "success");
       } catch (error) {
         console.error("Availability check failed", error);
         setMessage(error.message || "Could not check availability", "error");
@@ -308,9 +339,9 @@
         });
         const data = await response.json();
         if (!response.ok) throw new Error(data.error || "Could not create booking hold");
-          const statusPath = data.booking.statusPath || ("booking-status.html?id=" + encodeURIComponent(data.booking.id));
-          setMessage('Booking hold created. Reference: ' + data.booking.id + '<br><a class="font-bold underline" href="' + statusPath + '">View booking status and voucher</a>', "success");
-          await checkAvailability();
+        const statusPath = data.booking.statusPath || ("booking-status.html?id=" + encodeURIComponent(data.booking.id));
+        setMessage(bookingSuccessMessage(data, statusPath), "success");
+        await checkAvailability();
       } catch (error) {
         console.error("Booking hold failed", error);
         setMessage(error.message || "Could not create booking hold", "error");
